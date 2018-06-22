@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   #
 
   #s.license      = "MIT (example)"
-   s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+   s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -113,15 +113,17 @@ Pod::Spec.new do |s|
     ss.dependency 'RxCocoa', '~> 4.0.0'
   end
 
-  s.subspec "Snap" do |ss|
-    ss.source_files = "Dependences/Classes/SnapKit/**/*"
-    ss.dependency "SnapKit", "~> 4.0.0"
-  end
+  # s.subspec "Snap" do |ss|
+  #   ss.source_files = "Dependences/Classes/SnapKit/**/*"
+  #   ss.dependency "SnapKit", "~> 4.0.0"
+  #   ss.dependency "Core"
+  # end
 
-  s.subspec "SvpHUD" do |ss|
-    ss.source_files = "Dependences/Classes/SVProgressHUD/**/*"
-    ss.dependency "SVProgressHUD", " 2.2.2"
-  end
+  # s.subspec "SvpHUD" do |ss|
+  #   ss.source_files = "Dependences/Classes/SVProgressHUD/**/*"
+  #   ss.dependency "SVProgressHUD", " 2.2.2"
+  #   ss.dependency "Core"
+  # end
 
   # s.public_header_files = "Classes/**/*.h"
 
