@@ -8,15 +8,15 @@
 
 import UIKit
 import Moya
-//import RxMoya
 import Alamofire
 import RxSwift
 
 var userToken = ""
 var headerFields = ["TOKEN": userToken]
 
-let testAPIProvider = RxMoyaProvider<API>(stubClosure: MoyaProvider.immediatelyStub)
-let APIProvider = RxMoyaProvider<API>()
+//let testAPIProvider = RxMoyaProvider<API>(stubClosure: MoyaProvider.immediatelyStub)
+//let APIProvider = RxMoyaProvider<API>()
+//let APIProvider = MoyaProvider<API>()
 
 enum API {
  // Example

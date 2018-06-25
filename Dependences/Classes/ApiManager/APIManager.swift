@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import SwiftyJSON
 
-
+/*
 func APIRequest<T : SNSwiftyJSONAble>(requestType: API, modelType: [T.Type]) -> Observable<SNMoyaResult<[T]>> {
     return APIProvider.request(requestType).asObservable().map(to: modelType.self)
 }
@@ -42,3 +42,4 @@ func APIRequestBool(requestType: API) -> Observable<SNMoyaResult<Bool>> {
 func APIRequestJSON(requestType: API) -> Observable<SNMoyaResult<JSON>> {
     return APIProvider.request(requestType).asObservable().mapToJSON()
 }
+*/
