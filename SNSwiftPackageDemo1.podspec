@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackageDemo1"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "SNSwiftPackageDemo1."
   s.swift_version = '4.0'
 
@@ -127,8 +127,8 @@ Pod::Spec.new do |s|
 
   s.subspec "API" do |ss|
     ss.source_files = "Dependences/Classes/ApiManager/**/*"
-    ss.dependency "Moya", "10.0.0"
-    ss.dependency 'SwiftyJSON', '3.1.4'
+    ss.dependency "Moya", "~> 11"
+    ss.dependency 'SwiftyJSON', '~> 4.0'
     ss.dependency "SNSwiftPackageDemo1/RxSwiftExtension"
     ss.dependency "SNSwiftPackageDemo1/Core"
   end
