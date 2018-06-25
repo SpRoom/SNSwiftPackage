@@ -125,6 +125,12 @@ Pod::Spec.new do |s|
     ss.dependency "SNSwiftPackageDemo1/Core"
   end
 
+  s.subspec "API" do |ss|
+    ss.source_files = "Dependences/Classes/ApiManager/**/*"
+    ss.dependency "Moya", "10.0.0"
+    ss.dependency "SNSwiftPackageDemo1/RxSwiftExtension"
+  end
+
   # s.public_header_files = "Classes/**/*.h"
 
 
