@@ -8,23 +8,73 @@
 
 import UIKit
 import Moya
-import Alamofire
 import RxSwift
 
-var userToken = ""
-var headerFields = ["TOKEN": userToken]
+
+let APIProvider = MoyaProvider<APIExp>()
+
+enum APIExp {
+    case login(username: String, pwd: String)
+}
+
+extension APIExp : JSONMappableTargetType {
+    
+    
+    var responseType: SNSwiftyJSONAble.Type {
+        return SNNetModel.self
+    }
+    
+    var baseURL: URL {
+        return URL(string:"http://test.oseepay.com")!
+    }
+    
+    var path: String {
+        return "api/testlogin"
+    }
+    
+    var method: Moya.Method {
+        return .post
+    }
+    
+    var sampleData: Data {
+        return Data(base64Encoded: "")!
+    }
+    
+    var task: Task {
+        switch self {
+        case .login(let username,let pwd):
+            let para = [
+                "username": username,
+                "password": pwd
+            ]
+            return .requestParameters(parameters: para, encoding: URLEncoding.default)
+            
+        }
+    }
+    
+    var headers: [String : String]? {
+        return nil
+    }
+    
+    
+}
+
+
+
+//var userToken = ""
+//var headerFields = ["TOKEN": userToken]
 
 //let testAPIProvider = RxMoyaProvider<API>(stubClosure: MoyaProvider.immediatelyStub)
 //let APIProvider = RxMoyaProvider<API>()
 //let APIProvider = MoyaProvider<API>()
-
+/*
 enum API {
  // Example
 // MARK: - 登录
    // case login(username: String, password: String)
 
 }
-
+*/
 /*
 extension API: JSONMappableTargetType {
     

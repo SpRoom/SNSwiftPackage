@@ -18,6 +18,4 @@ protocol JSONMappableTargetType: TargetType {
     var responseType: SNSwiftyJSONAble.Type { get }
 }
 
-let MOYA_RESULT_CODE = "code"
-let MOYA_RESULT_MSG = "msg"
-let MOYA_RESULT_DATA = "data"
+

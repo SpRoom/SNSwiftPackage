@@ -16,9 +16,9 @@ public class SNNetModel: SNSwiftyJSONAble {
     let data : JSON?
     
     required public init?(jsonData: JSON) {
-        self.code = jsonData[MOYA_RESULT_CODE].intValue
-        self.msg = jsonData[MOYA_RESULT_MSG].stringValue
-        let oda = jsonData[MOYA_RESULT_DATA].object
+        self.code = jsonData[SNAPIConfig.MOYA_RESULT_CODE].intValue
+        self.msg = jsonData[SNAPIConfig.MOYA_RESULT_MSG].stringValue
+        let oda = jsonData[SNAPIConfig.MOYA_RESULT_DATA].object
         self.data = JSON(oda)
     }
     

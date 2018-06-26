@@ -19,9 +19,9 @@ public extension Response {
 //        let jsonObject = try mapJSON()
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
-        let jsonCode = jsonData[MOYA_RESULT_CODE]
-        let jsonObj = jsonData[MOYA_RESULT_DATA]
-        let jsonMsg = jsonData[MOYA_RESULT_MSG]
+        let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
+        let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
+        let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
         
 //        let jsonObject = jsonObj.object
 //        guard let mappedObject = T(jsonData: jsonData/*JSON(jsonObject)*/) else {
@@ -52,9 +52,12 @@ public extension Response {
         let jsonData = try JSON(data: self.data)
 //        let mappedArray = JSON(jsonObject)
         SNLog(jsonData)
-        let jsonCode = jsonData[MOYA_RESULT_CODE]
-        let jsonObj = jsonData[MOYA_RESULT_DATA]
-        let jsonMsg = jsonData[MOYA_RESULT_MSG]
+        
+        assert(SNAPIConfig.MOYA_RESULT_CODE == "", "请设置网络返回状态码的key")
+        
+        let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
+        let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
+        let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
         
         let mappedArray = jsonObj
         
@@ -80,9 +83,9 @@ public extension Response {
         
         let jsonData = try JSON(data: self.data)
         
-        let jsonCode = jsonData[MOYA_RESULT_CODE]
-        let jsonObj = jsonData[MOYA_RESULT_DATA]
-        let jsonMsg = jsonData[MOYA_RESULT_MSG]
+        let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
+        let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
+        let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
         
         guard jsonCode.int == 1000, let mappedString = jsonObj.string else {
             //throw SNMoyaError.fail(code: nil, msg: jsonMsg.string)

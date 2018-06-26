@@ -10,36 +10,36 @@ import UIKit
 import RxSwift
 import SwiftyJSON
 
-/*
-func APIRequest<T : SNSwiftyJSONAble>(requestType: API, modelType: [T.Type]) -> Observable<SNMoyaResult<[T]>> {
-    return APIProvider.request(requestType).asObservable().map(to: modelType.self)
+
+func APIRequest<T : SNSwiftyJSONAble>(requestType: APIExp, modelType: [T.Type]) -> Observable<SNMoyaResult<[T]>> {
+    return APIProvider.rx.request(requestType).asObservable().map(to: modelType.self)
 }
 
 
-func APIRequest<T : SNSwiftyJSONAble>(requestType: API, modelType: T.Type) -> Observable<SNMoyaResult<T>> {
-    return APIProvider.request(requestType).asObservable().map(to: modelType.self)
+func APIRequest<T : SNSwiftyJSONAble>(requestType: APIExp, modelType: T.Type) -> Observable<SNMoyaResult<T>> {
+    return APIProvider.rx.request(requestType).asObservable().map(to: modelType.self)
 }
 
 
-func APIRequest(requestType: API) -> Observable<SNMoyaResult<String>> {
-    return APIProvider.request(requestType).asObservable().mapToString()
+func APIRequest(requestType: APIExp) -> Observable<SNMoyaResult<String>> {
+    return APIProvider.rx.request(requestType).asObservable().mapToString()
 }
 
 
-func APIRequestModel(requestType: API) -> Observable<SNMoyaResult<SNNetModel>> {
+func APIRequestModel(requestType: APIExp) -> Observable<SNMoyaResult<SNNetModel>> {
     
-    return APIProvider.request(requestType).asObservable().mapToNetModel()
+    return APIProvider.rx.request(requestType).asObservable().mapToNetModel()
 }
 
-func APIRequestModel<T : SNSwiftyJSONAble>(requestType: API, modelType: T.Type) -> Observable<SNMoyaResult<T>> {
-    return APIProvider.request(requestType).asObservable().mapToModel()
+func APIRequestModel<T : SNSwiftyJSONAble>(requestType: APIExp, modelType: T.Type) -> Observable<SNMoyaResult<T>> {
+    return APIProvider.rx.request(requestType).asObservable().mapToModel()
 }
 
-func APIRequestBool(requestType: API) -> Observable<SNMoyaResult<Bool>> {
-    return APIProvider.request(requestType).asObservable().mapToBool()
+func APIRequestBool(requestType: APIExp) -> Observable<SNMoyaResult<Bool>> {
+    return APIProvider.rx.request(requestType).asObservable().mapToBool()
 }
 
-func APIRequestJSON(requestType: API) -> Observable<SNMoyaResult<JSON>> {
-    return APIProvider.request(requestType).asObservable().mapToJSON()
+func APIRequestJSON(requestType: APIExp) -> Observable<SNMoyaResult<JSON>> {
+    return APIProvider.rx.request(requestType).asObservable().mapToJSON()
 }
-*/
+
