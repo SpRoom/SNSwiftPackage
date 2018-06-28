@@ -20,6 +20,12 @@ func createImageBy(color : UIColor) -> UIImage{
     return image!
 }
 
+// UI
+/// 图片
+func Image(_ name: String) -> UIImage? {
+    return UIImage(named: name)
+}
+
 extension UIImage {
     
 }

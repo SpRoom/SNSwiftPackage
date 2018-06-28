@@ -127,7 +127,7 @@ Pod::Spec.new do |s|
 
   s.subspec "API" do |ss|
     ss.source_files = "Dependences/Classes/ApiManager/**/*"
-    ss.dependency "Moya", "~> 11"
+    ss.dependency "Moya/RxSwift", "~> 11"
     ss.dependency 'SwiftyJSON', '~> 4.0'
     ss.dependency "SNSwiftPackageDemo1/RxSwiftExtension"
     ss.dependency "SNSwiftPackageDemo1/Core"

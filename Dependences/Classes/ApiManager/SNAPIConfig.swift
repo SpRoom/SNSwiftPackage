@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SNAPIConfig {
+public class SNAPIConfig {
     
     
     private(set) static var MOYA_RESULT_CODE = "code"

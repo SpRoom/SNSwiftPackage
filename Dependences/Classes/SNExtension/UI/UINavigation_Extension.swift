@@ -13,13 +13,6 @@ enum SNNaviButtonPostion {
     case right
 }
 
-enum SNJumpType {
-    case push
-    case pop
-    case present
-    case dismiss
-    case popToRoot
-}
 
 func naviButton(_ naviItem: UINavigationItem,  target: Any?, action: Selector, point: SNNaviButtonPostion = .right, title: String, titleColor: UIColor = .white) -> UIButton {
     

@@ -52,3 +52,8 @@ extension UIColor {
      }
      */
 }
+
+/// 十六进制颜色
+func Color(_ hex: Int) -> UIColor {
+    return UIColor(hexadecimal: hex)
+}
