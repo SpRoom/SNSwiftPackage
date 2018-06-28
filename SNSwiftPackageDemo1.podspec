@@ -107,6 +107,13 @@ Pod::Spec.new do |s|
     
   end
 
+  s.subspec "Base" do |ss|
+  ss.source_files = "Dependences/Classes/Base/**/*"
+  ss.dependency "SNSwiftPackageDemo1/Core"
+  ss.dependency "SNSwiftPackageDemo1/RxSwiftExtension"
+  ss.dependency "SNSwiftPackageDemo1/Snap"
+  end
+
   s.subspec "RxSwiftExtension" do |ss|
     ss.source_files = "Dependences/Classes/Rx/**/*"
     ss.dependency "RxSwift", "~> 4.0"

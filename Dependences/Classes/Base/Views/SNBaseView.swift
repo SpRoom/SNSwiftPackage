@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class SNBaseView: UIView {
+ class SNBaseView: UIView {
 
     let disposeBag = DisposeBag()
     
@@ -24,6 +24,8 @@ class SNBaseView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public static var defaultBgColor = UIColor(hexadecimal: 0xf4f4f4)
 
 }
 
@@ -37,6 +39,6 @@ class SNBaseView: UIView {
 extension SNBaseView {
     
     func f4background() {
-        backgroundColor = color_bg_gray
+        backgroundColor = SNBaseView.defaultBgColor
     }
 }

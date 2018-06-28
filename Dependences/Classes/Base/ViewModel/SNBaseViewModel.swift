@@ -61,3 +61,19 @@ extension SNBaseViewModel {
 //        }
 //    }
 }
+
+func VCJump(VC: UIViewController,to: UIViewController, type: SNJumpType, completion: (() -> Swift.Void)? = nil) {
+    
+    switch type {
+    case .push:
+        VC.navigationController?.pushViewController(to, animated: true)
+    case .present:
+        VC.present(to, animated: true, completion: completion)
+    case .pop:
+        VC.navigationController?.popViewController(animated: true)
+    case .dismiss:
+        VC.dismiss(animated: true, completion: completion)
+    case .popToRoot:
+        VC.navigationController?.popToRootViewController(animated: true)
+    }
+}

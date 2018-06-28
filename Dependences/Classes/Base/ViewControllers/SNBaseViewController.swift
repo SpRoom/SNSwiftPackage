@@ -144,6 +144,7 @@ extension SNBaseViewController {
         self.showNoDataView = show
     }
     
+    /*
     func setNaviBarColor(scroll: UIScrollView, titleView: UIView){
         
         let xa = scroll.contentOffset.y + 64 + 64 - fit( 340)
@@ -163,6 +164,7 @@ extension SNBaseViewController {
             }
         }
     }
+ */
     
     func popToHome() {
 
@@ -198,7 +200,7 @@ extension SNBaseNoDataView {
         
         addSubview(imgV)
         addSubview(descL)
-        backgroundColor = color_bg_gray_f5
+        backgroundColor = SNBaseView.defaultBgColor
         
         imgV.snp.makeConstraints { (make) in
             make.bottom.snEqualTo(self.snp.centerY).snOffset(-100)

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import DZNEmptyDataSet
+//import DZNEmptyDataSet
 
 public class SNBaseTableView: UITableView {
 
@@ -59,7 +59,7 @@ extension SNBaseTableView {
         //        bounces = false
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-        backgroundColor = color_bg_gray
+        backgroundColor = SNBaseView.defaultBgColor
         //        emptyDataSetSource = self
         //        emptyDataSetDelegate = self
         
