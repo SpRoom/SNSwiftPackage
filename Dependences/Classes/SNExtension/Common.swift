@@ -13,11 +13,11 @@ class common: NSObject {
 }
 //MARK: - 公共属性
 
-let ScreenW = UIScreen.main.bounds.width
+public let ScreenW = UIScreen.main.bounds.width
 
-let ScreenH = UIScreen.main.bounds.height
+public let ScreenH = UIScreen.main.bounds.height
 
-func fit(_ attribute: CGFloat) -> CGFloat {
+public func fit(_ attribute: CGFloat) -> CGFloat {
     return adjustSizeWithUiDesign(attribute: attribute, UiDesignWidth: 750.0)
 }
 

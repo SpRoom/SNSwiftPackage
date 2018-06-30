@@ -9,11 +9,11 @@
 import UIKit
 import RxSwift
 
- class SNBaseView: UIView {
+open class SNBaseView: UIView {
 
-    let disposeBag = DisposeBag()
+   public let disposeBag = DisposeBag()
     
-    init() {
+    public init() {
         super.init(frame: .zero)
         backgroundColor = .white
         setupView()
@@ -21,7 +21,7 @@ import RxSwift
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -31,9 +31,9 @@ import RxSwift
 
 @objc extension SNBaseView {
     
-    func setupView() { }
+  open  func setupView() { }
     
-    func bindEvent() { }
+   open func bindEvent() { }
 }
 
 extension SNBaseView {
@@ -41,4 +41,7 @@ extension SNBaseView {
     func f4background() {
         backgroundColor = SNBaseView.defaultBgColor
     }
+}
+
+extension SNBaseView : ReusableView {
 }

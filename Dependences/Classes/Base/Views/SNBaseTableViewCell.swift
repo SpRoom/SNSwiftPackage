@@ -9,9 +9,9 @@
 import UIKit
 import RxSwift
 
-public class SNBaseTableViewCell: UITableViewCell {
+open class SNBaseTableViewCell: UITableViewCell {
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupView()
@@ -27,7 +27,7 @@ public class SNBaseTableViewCell: UITableViewCell {
     
     var disposeBag = DisposeBag()
     
-    override public func prepareForReuse() {
+    override open func prepareForReuse() {
         disposeBag = DisposeBag()
     }
 

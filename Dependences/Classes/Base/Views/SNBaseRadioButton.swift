@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SNBaseRadioButton: UIButton {
+
+open class SNBaseRadioButton: UIButton {
 
    fileprivate(set) var groupId : String = ""
     private var check : Bool = false
-    var checked : Bool {
+   public var checked : Bool {
         set {
             check = newValue
             setChecked()
@@ -27,7 +28,7 @@ class SNBaseRadioButton: UIButton {
 //    typealias click = (SNBaseRadioButton,Bool, String) -> ()
 //    var radioClick :click?
     
-    init(groupId id: String) {
+   public init(groupId id: String) {
     
     groupId = id
     
@@ -39,16 +40,16 @@ class SNBaseRadioButton: UIButton {
     addTarget(self, action: #selector(radioChecked), for: .touchUpInside)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 extension SNBaseRadioButton {
     
-    @objc func setupView() {}
+    @objc open func setupView() {}
     
-    @objc func refreshState() {}
+    @objc open func refreshState() {}
     
     func addToGroup() {
         
@@ -139,4 +140,7 @@ extension SNBaseRadioButton {
     
 //    清除样式
     @objc func unCheckRefresh() {}
+}
+
+extension SNBaseRadioButton : ReusableView {
 }

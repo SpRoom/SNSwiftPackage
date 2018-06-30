@@ -17,11 +17,11 @@ public enum SNJumpType {
     case popToRoot
 }
 
-public class SNBaseViewModel: NSObject {
-    let disposeBag = DisposeBag()
+open class SNBaseViewModel: NSObject {
+   public let disposeBag = DisposeBag()
     let jumpSubject = PublishSubject<(UIViewController, SNJumpType)>()
     
-    override init() {
+    override public init() {
         super.init()
         
         loading()
@@ -31,7 +31,7 @@ public class SNBaseViewModel: NSObject {
 
 extension SNBaseViewModel {
     
-   @objc public func loading() {
+   @objc open func loading() {
         
     }
     
@@ -62,7 +62,7 @@ extension SNBaseViewModel {
 //    }
 }
 
-func VCJump(VC: UIViewController,to: UIViewController, type: SNJumpType, completion: (() -> Swift.Void)? = nil) {
+public func VCJump(VC: UIViewController,to: UIViewController, type: SNJumpType, completion: (() -> Swift.Void)? = nil) {
     
     switch type {
     case .push:

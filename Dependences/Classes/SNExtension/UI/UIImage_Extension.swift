@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 //颜色图片
-func createImageBy(color : UIColor) -> UIImage{
+public func createImageBy(color : UIColor) -> UIImage{
     let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
     UIGraphicsBeginImageContext(rect.size)
     let context = UIGraphicsGetCurrentContext()
@@ -22,7 +22,7 @@ func createImageBy(color : UIColor) -> UIImage{
 
 // UI
 /// 图片
-func Image(_ name: String) -> UIImage? {
+public func Image(_ name: String) -> UIImage? {
     return UIImage(named: name)
 }
 

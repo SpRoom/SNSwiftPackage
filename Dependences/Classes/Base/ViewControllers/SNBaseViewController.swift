@@ -9,12 +9,12 @@
 import UIKit
 import RxSwift
 
-public class SNBaseViewController: UIViewController {
+open class SNBaseViewController: UIViewController {
     
     
-    let disposeBag = DisposeBag()
+   public let disposeBag = DisposeBag()
 
-   public override func viewDidLoad() {
+   open override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -25,7 +25,7 @@ public class SNBaseViewController: UIViewController {
         
     }
 
-    public override func didReceiveMemoryWarning() {
+    open override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -35,24 +35,24 @@ public class SNBaseViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
-   public override func viewWillAppear(_ animated: Bool) {
+   open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadData()
         viewAppear(animated)
     }
     
-    override public func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewAppeared(animated)
     }
     
-    override public func viewWillDisappear(_ animated: Bool) {
+    override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewDisAppear(animated)
 //        DDZSingleton.shared.isCancelLogin = false
     }
 
-    override public func viewDidDisappear(_ animated: Bool) {
+    override open func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewDisAppeared(animated)
     }
@@ -102,13 +102,13 @@ extension SNBaseViewController {
     }
     
     /// 启动视图
-    @objc func setupView() {}
+    @objc open func setupView() {}
     
     /// 帮顶事件
-    @objc func bindEvent() {}
+    @objc open func bindEvent() {}
     
     /// 初始化加载数据
-    @objc func loadData() {}
+    @objc open func loadData() {}
     
     /// 界面即将显示
     ///

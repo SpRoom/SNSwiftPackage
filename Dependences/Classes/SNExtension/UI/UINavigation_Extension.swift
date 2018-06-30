@@ -8,13 +8,13 @@
 
 import UIKit
 
-enum SNNaviButtonPostion {
+public enum SNNaviButtonPostion {
     case left
     case right
 }
 
 
-func naviButton(_ naviItem: UINavigationItem,  target: Any?, action: Selector, point: SNNaviButtonPostion = .right, title: String, titleColor: UIColor = .white) -> UIButton {
+public func naviButton(_ naviItem: UINavigationItem,  target: Any?, action: Selector, point: SNNaviButtonPostion = .right, title: String, titleColor: UIColor = .white) -> UIButton {
     
     let buttonRight = UIButton()
     buttonRight.setTitle(title, for: .normal)
