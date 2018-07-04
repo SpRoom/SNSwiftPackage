@@ -11,19 +11,25 @@ import RxSwift
 
 
 /// 每次点击按钮需调用start方法
-class SNTimerButton: UIButton {
+public class SNTimerButton: UIButton {
     
 //    let buttonVari = Variable("验证码")
     
     let time : Int
-    let content : String
-    init(remainTime: Int, title: String = "验证码") {
+    var content : String {
+        didSet {
+            setTitle(content, for: .normal)
+        }
+    }
+    
+    public init(remainTime: Int, title: String = "验证码") {
         time = remainTime
         content = title
+        
         super.init(frame: .zero)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -35,7 +41,7 @@ class SNTimerButton: UIButton {
                 isCounting = false
                 isEnabled = true
 //                buttonVari.value = "验证码"
-                setTitle("验证码", for: .normal)
+                setTitle(content, for: .normal)
                 
             }
         }
@@ -63,10 +69,14 @@ class SNTimerButton: UIButton {
         remainSecond -= 1
     }
     
-    func start() {
+    public func start() {
         
         isEnabled = false
         isCounting = true
+    }
+    
+    public func setContent(title: String) {
+        content = title
     }
 
 }
