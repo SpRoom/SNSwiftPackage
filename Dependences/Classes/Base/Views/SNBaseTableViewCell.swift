@@ -25,7 +25,7 @@ open class SNBaseTableViewCell: UITableViewCell {
     }
     
     
-    var disposeBag = DisposeBag()
+    public var disposeBag = DisposeBag()
     
     override open func prepareForReuse() {
         disposeBag = DisposeBag()

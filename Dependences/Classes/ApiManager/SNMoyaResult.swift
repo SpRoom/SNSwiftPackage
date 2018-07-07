@@ -16,7 +16,7 @@ enum SNMoyaError : Error {
 
 public enum SNMoyaResult<T> {
     case success(T)
-    case fail(code: Int?, msg: String?)
+    case fail(code: String?, msg: String?)
     case bool(msg: String)
 }
 
@@ -25,7 +25,7 @@ extension UILabel {
         // 观察text
         let source: Observable<String> = self.rx.observe(String.self, "text").map { $0 ?? "" }
         let setter: (UILabel, String) -> Void = { $0.text = $1 }
-        let bindingObserver = UIBindingObserver(UIElement: self, binding: setter)
+        let bindingObserver = Binder(self, binding: setter)
         return ControlProperty<String>(values: source, valueSink: bindingObserver)
     }
 }
@@ -36,7 +36,7 @@ extension SNMoyaResult {
         switch self {
         case .success(let value):
             return Observable.just(value)
-        case .fail(let code,let msg):
+        case .fail( _, _):
             return Observable.empty()
         default:
             return Observable.empty()
@@ -47,7 +47,7 @@ extension SNMoyaResult {
         switch self {
         case .success(_):
             return Observable.empty()
-        case .fail(let code,let msg):
+        case .fail(_,let msg):
             return Observable.just(msg ?? "")
         default:
             return Observable.empty()

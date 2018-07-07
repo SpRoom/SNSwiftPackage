@@ -19,7 +19,7 @@ public enum SNJumpType {
 
 open class SNBaseViewModel: NSObject {
    public let disposeBag = DisposeBag()
-    let jumpSubject = PublishSubject<(UIViewController, SNJumpType)>()
+   public let jumpSubject = PublishSubject<(UIViewController, SNJumpType)>()
     
     override public init() {
         super.init()

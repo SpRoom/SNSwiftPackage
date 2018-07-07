@@ -19,3 +19,28 @@ public protocol JSONMappableTargetType: TargetType {
 }
 
 
+extension JSONMappableTargetType {
+    
+   public func covertToDic() -> Dictionary<String,Any> {
+        
+        var para : [String: Any] = [:]
+        
+        let mir = Mirror(reflecting: self)
+        
+        
+        for tuple in mir.children {
+            let tupleMir =  Mirror(reflecting: tuple.value)
+            
+            for (key,val) in tupleMir.children {
+                if let key = key {
+                    para[key] = val
+                } else if let vkey = val as? String {
+                    para[vkey] = val
+                }
+            }
+            
+        }
+        
+        return para
+    }
+}
