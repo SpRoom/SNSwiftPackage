@@ -96,3 +96,23 @@ func <-> <T>(property: ControlProperty<T>, variable: Variable<T>) -> Disposable 
 
 // }
 
+
+@discardableResult
+public func <-> (property: ControlProperty<String>, subject: BehaviorSubject<String>) -> Disposable {
+    
+    let bindToUIDisposeable = subject.asObservable().bind(to: property)
+    
+    let bindToSubject = property.subscribe(onNext: { text in
+        
+        let subV = try? subject.value()
+        
+        if let subV = subV, subV != text {
+            subject.onNext(text)
+        }
+        
+    }, onCompleted: {
+        bindToUIDisposeable.dispose()
+    })
+    
+    return Disposables.create(bindToUIDisposeable, bindToSubject)
+}
