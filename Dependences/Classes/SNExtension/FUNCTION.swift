@@ -46,7 +46,7 @@ public func getCurrentVC() -> UIViewController {
 }
 
 // MARK: - 字典转JSON
-func dic2Json(dictionary: Dictionary<String,String>) {
+public func dic2Json(dictionary: Dictionary<String,String>) {
     
     
     let result = dictionary.map {
@@ -57,7 +57,7 @@ func dic2Json(dictionary: Dictionary<String,String>) {
 }
 
 // MARK: - 模型转字典
-func modelToDic<T>(model:T) -> Dictionary<String,String> {
+public func modelToDic<T>(model:T) -> Dictionary<String,String> {
     
     
     let aBookmark = model
@@ -84,14 +84,14 @@ func modelToDic<T>(model:T) -> Dictionary<String,String> {
 }
 
 // MARK: - 字典转JSON
-func dic2JSONStr(dictionary:Dictionary<String,Any>) -> String {
+public func dic2JSONStr(dictionary:Dictionary<String,Any>) -> String {
     
     var jsonStr = ""
     do {
         
         let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
         
-         jsonStr = String(data: jsonData, encoding: .utf8)!
+        jsonStr = String(data: jsonData, encoding: .utf8)!
         
         SNLog(jsonStr)
     } catch let error as NSError {
@@ -102,48 +102,48 @@ func dic2JSONStr(dictionary:Dictionary<String,Any>) -> String {
 }
 
 // MARK: - String 转 Double
-func text2Doubel(_ text: String) -> Double {
+public func text2Doubel(_ text: String) -> Double {
     
     let n = NumberFormatter().number(from: text)
     if let num = n {
         let totalPrice = Double(truncating: num)
-    return totalPrice
+        return totalPrice
     } else {
         return 0.00
     }
 }
 
 // MARK: - String 转 Int
-func text2Int(_ text: String) -> Int {
-
-
-//    if let i = Int(text) {
-//        return i
-//    } else {
-//        return 0
-//    }
+public func text2Int(_ text: String) -> Int {
+    
+    
+    //    if let i = Int(text) {
+    //        return i
+    //    } else {
+    //        return 0
+    //    }
     let n = NumberFormatter().number(from: text)
-     if let num = n {
+    if let num = n {
         let totalPrice = Int(truncating: num)
-    return totalPrice
-     } else {
+        return totalPrice
+    } else {
         return 0
     }
 }
 
 // MARK: - String 转 CGFloat
-func text2CGFloat(_ text: String) -> CGFloat {
+public func text2CGFloat(_ text: String) -> CGFloat {
     let n = NumberFormatter().number(from: text)
     if let num = n {
         let totalPrice = CGFloat(truncating: num)
-    return totalPrice
+        return totalPrice
     } else {
         return 0.00
     }
 }
 
 // MARK: - 验证是否是数字
-func validNumber(text: String) -> Bool {
+public func validNumber(text: String) -> Bool {
     
     let number = "^[0-9]+$"
     
@@ -157,7 +157,7 @@ func validNumber(text: String) -> Bool {
 }
 
 // MARK: - 验证是否都是大写
-func validCharacter(text: String) -> Bool {
+public func validCharacter(text: String) -> Bool {
     
     let character = "^[A-Z]+$"
     
@@ -174,7 +174,7 @@ func validCharacter(text: String) -> Bool {
 ///
 /// - Parameter format: 时间格式
 /// - Returns: 当前时间
-func getCurrentTime(format: String) -> String {
+public func getCurrentTime(format: String) -> String {
     let dateformatter = DateFormatter()
     dateformatter.dateFormat = format
     let currentDate = Date()
@@ -186,7 +186,7 @@ func getCurrentTime(format: String) -> String {
 /// 拨打电话
 ///
 /// - Parameter phone: 电话号码
-func callPhone(phone: String) {
+public func callPhone(phone: String) {
     
     if #available(iOS 10.0, *) { //10.3.1  10.3
         UIApplication.shared.open(URL(string: "telprompt://\(phone)")!, options: [:], completionHandler: nil)
