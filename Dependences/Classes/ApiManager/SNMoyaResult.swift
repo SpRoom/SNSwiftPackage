@@ -18,6 +18,7 @@ public enum SNMoyaResult<T> {
     case success(T)
     case fail(code: String?, msg: String?)
     case bool(msg: String)
+    case login
 }
 
 extension UILabel {

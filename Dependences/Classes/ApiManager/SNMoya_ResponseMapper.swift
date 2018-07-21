@@ -23,6 +23,13 @@ public extension Response {
         let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
         let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
         
+        if let token = jsonData["token"].string, token != SNAPIConfig.tokenAuth {
+            
+            print("token核对失败，请重新登录")
+            //            return SNMoyaResult.fail(code: "99", msg: "token核对失败，请重新登录")
+            return SNMoyaResult.login
+        }
+        
         //        let jsonObject = jsonObj.object
         //        guard let mappedObject = T(jsonData: jsonData/*JSON(jsonObject)*/) else {
         //            throw MoyaError.jsonMapping(self)
@@ -53,11 +60,17 @@ public extension Response {
         //        let mappedArray = JSON(jsonObject)
         SNLog(jsonData)
         
-        assert(SNAPIConfig.MOYA_RESULT_CODE == "", "请设置网络返回状态码的key")
+        assert(SNAPIConfig.MOYA_RESULT_CODE != "", "请设置网络返回状态码的key")
         
         let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
         let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
         let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
+        
+        if let token = jsonData["token"].string, token != SNAPIConfig.tokenAuth {
+            
+            print("token核对失败，请重新登录")
+            return SNMoyaResult.fail(code: "99", msg: "token核对失败，请重新登录")
+        }
         
         let mappedArray = jsonObj
         
