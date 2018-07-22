@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackageDemo1"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "SNSwiftPackageDemo1."
   s.swift_version = '4.0'
 
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
           当然这里只是尝试搭建一个自己的pod 
                    DESC
 
-  s.homepage     = "https://github.com/SpectatorNanWithZZC/SNSwiftPackageDemo1"
+  s.homepage     = "https://github.com/SpectatorNanWithZZC/SNSwiftPackage"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 

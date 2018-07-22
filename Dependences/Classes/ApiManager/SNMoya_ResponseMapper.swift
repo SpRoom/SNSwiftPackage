@@ -43,7 +43,7 @@ public extension Response {
         //        }
         
         guard jsonCode.string == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE, let mappedObject = T(jsonData: jsonObj) else {
-            return SNMoyaResult.fail(code: jsonCode.string, msg: jsonMsg.stringValue)
+            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         
         
@@ -69,7 +69,7 @@ public extension Response {
         if let token = jsonData["token"].string, token != SNAPIConfig.tokenAuth {
             
             print("token核对失败，请重新登录")
-            return SNMoyaResult.fail(code: "99", msg: "token核对失败，请重新登录")
+            return SNMoyaResult.login
         }
         
         let mappedArray = jsonObj
@@ -86,7 +86,7 @@ public extension Response {
         //            return SNMoyaResult.fail(code: jsonCode.int, msg: jsonMsg.string)
         //        }
         guard jsonCode.string == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE else {
-            return SNMoyaResult.fail(code: jsonCode.string, msg: jsonMsg.stringValue)
+            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         //        let mappedObjectsArray = mappedArray.arrayValue.flatMap { T(jsonData: $0) }
         let mappedObjectsArray = mappedArray.arrayValue.compactMap { T(jsonData: $0) }
@@ -107,7 +107,7 @@ public extension Response {
         //            return SNMoyaResult.fail(code: jsonCode.int, msg: jsonMsg.string)
         //        }
         guard jsonCode.string == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE, let mappedString = jsonObj.string else {
-            return SNMoyaResult.fail(code: jsonCode.string, msg: jsonMsg.stringValue)
+            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         return SNMoyaResult.success(mappedString)
     }
