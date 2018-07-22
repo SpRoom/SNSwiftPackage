@@ -182,6 +182,16 @@ public func getCurrentTime(format: String) -> String {
     return date
 }
 
+public func getTimeBy(timeStamp: String, format: String) -> String {
+    
+    let dateformatter = DateFormatter()
+    dateformatter.dateFormat = format
+    let tims = TimeInterval.init(timeStamp)
+    let currentDate = Date(timeIntervalSince1970:tims!)
+    let date = dateformatter.string(from: currentDate)
+    return date
+}
+
 
 /// 拨打电话
 ///
