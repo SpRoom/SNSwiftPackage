@@ -19,8 +19,8 @@ public enum SNJumpType {
 
 open class SNBaseViewModel: NSObject {
    public let disposeBag = DisposeBag()
-   public let jumpSubject = PublishSubject<(UIViewController, SNJumpType)>()
-    
+   public let jumpSubject = PublishSubject<(UIViewController?, SNJumpType)>()
+    public var isCanJumpLogin = true
     override public init() {
         super.init()
         
@@ -62,13 +62,13 @@ extension SNBaseViewModel {
 //    }
 }
 
-public func VCJump(VC: UIViewController,to: UIViewController, type: SNJumpType, completion: (() -> Swift.Void)? = nil) {
+public func VCJump(VC: UIViewController,to: UIViewController?, type: SNJumpType, completion: (() -> Swift.Void)? = nil) {
     
     switch type {
     case .push:
-        VC.navigationController?.pushViewController(to, animated: true)
+        VC.navigationController?.pushViewController(to!, animated: true)
     case .present:
-        VC.present(to, animated: true, completion: completion)
+        VC.present(to!, animated: true, completion: completion)
     case .pop:
         VC.navigationController?.popViewController(animated: true)
     case .dismiss:

@@ -28,7 +28,7 @@ extension SZHUDTool {
     }
 }
 
-func SZHUDDismiss() {
+public func SZHUDDismiss() {
     if SVProgressHUD.isVisible() {
     SVProgressHUD.dismiss()
     }

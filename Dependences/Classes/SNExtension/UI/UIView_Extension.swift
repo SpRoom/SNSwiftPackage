@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    func corner(with: CGFloat, coners: UIRectCorner) {
+   public func corner(with: CGFloat, coners: UIRectCorner) {
         
         let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: with, height: with))
         

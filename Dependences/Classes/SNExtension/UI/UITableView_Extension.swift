@@ -16,7 +16,7 @@ protocol ReusableView: class {
 }
 
 extension ReusableView {
-    static var reuseIdentifier: String {
+    static public var reuseIdentifier: String {
         return String(describing: self)
     }
 }
@@ -33,7 +33,7 @@ extension UITableView {
     ///
     /// - Parameter indexPath: cell indexPath
     /// - Returns: cell
-    func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T /* where T: ReusableView */ {
+    public func dequeueReusableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T /* where T: ReusableView */ {
         guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.reuseIdentifier)")
         }
@@ -45,9 +45,16 @@ extension UITableView {
     /// 注册table view cell
     ///
     /// - Parameter cell: 需要注册的cell
-    func register<T: UITableViewCell>(_ cell: T.Type) {
+    public func register<T: UITableViewCell>(_ cell: T.Type) {
         
         register(cell.self, forCellReuseIdentifier: T.reuseIdentifier)
+    }
+    
+    public func registers<T: UITableViewCell>(_ cells: [T.Type]) {
+        
+        for cell in cells {
+            register(cell.self)
+        }
     }
 }
 

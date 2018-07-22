@@ -35,14 +35,14 @@ open class SNBaseTableViewCell: UITableViewCell {
 }
 
 
-@objc public extension SNBaseTableViewCell {
-    func setupView() {    }
+@objc extension SNBaseTableViewCell {
+    open func setupView() {    }
     
     func basicStyle() {
         selectionStyle = .none
     }
     
-    func initCustom() {
+    open func initCustom() {
         
     }
 }
