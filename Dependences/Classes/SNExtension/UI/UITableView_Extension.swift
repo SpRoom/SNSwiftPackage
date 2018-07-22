@@ -47,7 +47,7 @@ extension UITableView {
     /// - Parameter cell: 需要注册的cell
     public func register<T: UITableViewCell>(_ cell: T.Type) {
         
-        register(cell.self, forCellReuseIdentifier: T.reuseIdentifier)
+        register(cell.self, forCellReuseIdentifier: cell.reuseIdentifier)
     }
     
     public func registers<T: UITableViewCell>(_ cells: [T.Type]) {
