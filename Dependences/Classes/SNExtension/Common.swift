@@ -92,5 +92,16 @@ func cellIdentify(cellClass : AnyClass) -> String {
 func getCurrentIOS() -> CGFloat
 {
     return CGFloat(Float(UIDevice.current.systemVersion)!)
-    
 }
+
+// APP相关信息
+let infoDictionary = Bundle.main.infoDictionary
+public let appName = infoDictionary!["CFBundleDisplayName"] as! String //程序名称
+public let majorVersion = infoDictionary!["CFBundleShortVersionString"] as! String //主程序版本号
+public let buildVersion = infoDictionary!["CFBundleVersion"] as! String//版本号（内部标示）
+// 设备相关信息
+public let iosVersion = UIDevice.current.systemVersion //ios版本
+public let systemName = UIDevice.current.systemName //设备名称
+public let identifierNumber = UIDevice.current.identifierForVendor //设备udid
+public let deviceModel = UIDevice.current.model //设备型号
+public let localizedModel = UIDevice.current.localizedModel //设备区域化型号如A1533
