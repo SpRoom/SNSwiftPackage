@@ -11,7 +11,7 @@ import class UIKit.UITableView
 import class UIKit.UIViewController
 import struct Foundation.IndexPath
 
-protocol ReusableView: class {
+public protocol ReusableView {
     static var reuseIdentifier: String {get}
 }
 
