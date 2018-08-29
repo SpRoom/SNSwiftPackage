@@ -1,2 +1,3 @@
-# SNSwiftPackageDemo1
-podsepc文件演示
+# SNSwiftPackage
+
+SNSwiftyPackage is compomment package
