@@ -109,9 +109,9 @@ Pod::Spec.new do |s|
 
   s.subspec "Base" do |ss|
   ss.source_files = "Dependences/Classes/Base/**/*"
-  ss.dependency "SNSwiftPackageDemo1/Core"
-  ss.dependency "SNSwiftPackageDemo1/RxSwiftExtension"
-  ss.dependency "SNSwiftPackageDemo1/Snap"
+  ss.dependency "SNSwiftPackage/Core"
+  ss.dependency "SNSwiftPackage/RxSwiftExtension"
+  ss.dependency "SNSwiftPackage/Snap"
   end
 
   s.subspec "RxSwiftExtension" do |ss|
@@ -123,21 +123,21 @@ Pod::Spec.new do |s|
   s.subspec "Snap" do |ss|
     ss.source_files = "Dependences/Classes/SnapKit/**/*"
     ss.dependency "SnapKit", "~> 4.0.0"
-    ss.dependency "SNSwiftPackageDemo1/Core"
+    ss.dependency "SNSwiftPackage/Core"
   end
 
   s.subspec "HUD" do |ss|
     ss.source_files = "Dependences/Classes/SVProgressHUD/**/*"
     ss.dependency "SVProgressHUD", " 2.2.2"
-    ss.dependency "SNSwiftPackageDemo1/Core"
+    ss.dependency "SNSwiftPackage/Core"
   end
 
   s.subspec "API" do |ss|
     ss.source_files = "Dependences/Classes/ApiManager/**/*"
     ss.dependency "Moya/RxSwift", "~> 11"
     ss.dependency 'SwiftyJSON', '~> 4.0'
-    ss.dependency "SNSwiftPackageDemo1/RxSwiftExtension"
-    ss.dependency "SNSwiftPackageDemo1/Core"
+    ss.dependency "SNSwiftPackage/RxSwiftExtension"
+    ss.dependency "SNSwiftPackage/Core"
   end
 
   # s.public_header_files = "Classes/**/*.h"

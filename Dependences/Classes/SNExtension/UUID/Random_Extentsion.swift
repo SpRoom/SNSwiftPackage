@@ -57,11 +57,15 @@ class Random_Extentsion: NSObject {
         }
         SNLog("random \(uuid)")
         let uuidIndex = uuid.index(uuid.startIndex, offsetBy: 3)
-        let fisrt = uuid.substring(to: uuidIndex)
+//        let first = uuid.substring(to: uuidIndex)
+        let first = uuid.prefix(upTo: uuidIndex)
+        
         
         let timeStamp = getDateString(start: 2, end: 9)
         
-        return fisrt + "\(arc4random()%10)" + timeStamp + "\(arc4random()%10)"
+        let uuids = first + "\(arc4random()%10)" + timeStamp + "\(arc4random()%10)"
+        
+        return uuids
     }
     
     func getCartBatchNumber() -> String {
@@ -75,11 +79,12 @@ class Random_Extentsion: NSObject {
         }
         SNLog("random \(uuid)")
         let uuidIndex = uuid.index(uuid.startIndex, offsetBy: 5)
-        let fisrt = uuid.substring(to: uuidIndex)
+//        let first = uuid.substring(to: uuidIndex)
+        let first = uuid.prefix(upTo: uuidIndex)
         
         let timeStamp = getDateString(start: 8, end: 13)
         
-        return "VR" + fisrt + timeStamp + "\(arc4random()%10)" + "\(arc4random()%10)"
+        return "VR" + first + timeStamp + "\(arc4random()%10)" + "\(arc4random()%10)"
     }
 
 }

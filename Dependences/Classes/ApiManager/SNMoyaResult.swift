@@ -49,7 +49,7 @@ extension SNMoyaResult {
         case .success(_):
             return Observable.empty()
         case .fail(_,let msg):
-            return Observable.just(msg ?? "")
+            return Observable.just(msg )
         default:
             return Observable.empty()
         }
