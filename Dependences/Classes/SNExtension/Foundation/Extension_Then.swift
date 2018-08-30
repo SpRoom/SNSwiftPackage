@@ -5,9 +5,14 @@
 //  Created by spectator Mr.Z on 2016/9/24.
 //  Copyright © 2016年 spectator Mr.Z. All rights reserved.
 //
+//   https://github.com/devxoul/Then/blob/master/Sources/Then/Then.swift
 
 import Foundation
 import CoreGraphics
+
+#if os(iOS) || os(tvOS)
+import UIKit.UIGeometry
+#endif
 
 public protocol Then {}
 
@@ -62,3 +67,10 @@ extension CGPoint: Then {}
 extension CGRect: Then {}
 extension CGSize: Then {}
 extension CGVector: Then {}
+
+
+#if os(iOS) || os(tvOS)
+extension UIEdgeInsets: Then {}
+extension UIOffset: Then {}
+extension UIRectEdge: Then {}
+#endif

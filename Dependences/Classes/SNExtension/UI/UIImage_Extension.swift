@@ -9,17 +9,6 @@
 import Foundation
 import UIKit
 
-//颜色图片
-public func createImageBy(color : UIColor) -> UIImage{
-    let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
-    UIGraphicsBeginImageContext(rect.size)
-    let context = UIGraphicsGetCurrentContext()
-    context!.setFillColor(color.cgColor)
-    context!.fill(rect)
-    let image = UIGraphicsGetImageFromCurrentImageContext()
-    return image!
-}
-
 // UI
 /// 图片
 public func Image(_ name: String) -> UIImage? {
@@ -27,5 +16,16 @@ public func Image(_ name: String) -> UIImage? {
 }
 
 extension UIImage {
+    
+    //创建纯颜色图片
+    public static func createImageBy(color : UIColor) -> UIImage{
+        let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor)
+        context!.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        return image!
+    }
     
 }

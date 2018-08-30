@@ -10,12 +10,12 @@ import UIKit
 
 extension CGRect {
     
-    
+    public static func AdjustMake(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> CGRect {
+        return  CGRect(x: fit(x), y: fit(y), width: fit(width), height: fit(height))
+    }
 }
 
-func CGRectAdjust(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> CGRect {
-    return  CGRect(x: fit(x), y: fit(y), width: fit(width), height: fit(height))
-}
+
 
 extension UIView {
     

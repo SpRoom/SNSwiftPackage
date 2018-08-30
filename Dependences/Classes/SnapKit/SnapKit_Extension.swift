@@ -37,4 +37,24 @@ extension ConstraintMakerRelatable {
         return self.equalToSuperview(file, line)
     }
     
+    @discardableResult
+    public func snTopSuperview(vc: UIViewController,_ file: String = #file, _ line: UInt = #line) -> SnapKit.ConstraintMakerEditable {
+        
+        if #available(iOS 11, *) {
+            return self.equalTo(vc.view.safeAreaLayoutGuide.snp.top)
+        } else {
+            return self.equalTo(vc.topLayoutGuide.snp.bottom)
+        }
+    }
+    
+    @discardableResult
+    public func snBottomSuperview(vc: UIViewController,_ file: String = #file, _ line: UInt = #line) -> SnapKit.ConstraintMakerEditable {
+        
+        if #available(iOS 11, *) {
+            return self.equalTo(vc.view.safeAreaLayoutGuide.snp.bottom)
+        } else {
+            return self.equalTo(vc.bottomLayoutGuide.snp.bottom)
+        }
+    }
+    
 }

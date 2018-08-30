@@ -13,7 +13,7 @@ public enum SNNaviButtonPostion {
     case right
 }
 
-
+@discardableResult
 public func naviButton(_ naviItem: UINavigationItem,  target: Any?, action: Selector, point: SNNaviButtonPostion = .right, title: String, titleColor: UIColor = .white) -> UIButton {
     
     let buttonRight = UIButton()

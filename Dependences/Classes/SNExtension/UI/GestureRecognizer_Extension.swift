@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    public func addTap(to: UIView, target: Any, action: Selector) {
+    public static func addTap(to: UIView, target: Any, action: Selector) {
         
         let ges = UITapGestureRecognizer(target: target, action: action)
         to.addGestureRecognizer(ges)

@@ -8,9 +8,9 @@
 
 import UIKit
 
-typealias delay_Task = (_ cancel: Bool) -> ()
+public typealias delay_Task = (_ cancel: Bool) -> ()
 
-func delay(time: TimeInterval, block: @escaping () -> ()) {
+public func delay(time: TimeInterval, block: @escaping () -> ()) {
     
     DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: {
         block()
@@ -18,7 +18,7 @@ func delay(time: TimeInterval, block: @escaping () -> ()) {
 }
 
 @discardableResult
-func delay(_ time: TimeInterval, task: @escaping ()->()) ->  delay_Task? {
+public func delay(_ time: TimeInterval, task: @escaping ()->()) ->  delay_Task? {
     
     func dispatch_later(block: @escaping ()->()) {
         let t = DispatchTime.now() + time
@@ -48,6 +48,6 @@ func delay(_ time: TimeInterval, task: @escaping ()->()) ->  delay_Task? {
     return result
 }
 
-func cancel(_ task: delay_Task?) {
+public func cancel(_ task: delay_Task?) {
     task?(true)
 }

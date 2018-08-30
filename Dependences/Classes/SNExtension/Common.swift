@@ -61,16 +61,16 @@ public func SNLog<T>(_ message: T, file: String = #file, function: String = #fun
     print("[\(fileName)--\(function)--\(line) : \(message)]")
 }
 
-func ZJLog<T>(messagr : T ,file : String = #file,function : String = #function, line : Int = #line  )
-{
-    #if DEBUG
-        let str1 = (file as NSString).lastPathComponent
-        let str2 = NSMutableString.init(string: str1)
-        let range = NSRange.init(location: 0, length: str2.length)
-        str2.replaceOccurrences(of: ".swift", with: "", options: NSString.CompareOptions.backwards, range: range)
-        print("<\(str2)--\(function)>[\(line)]:\(messagr)")
-    #endif
-}
+//func ZJLog<T>(messagr : T ,file : String = #file,function : String = #function, line : Int = #line  )
+//{
+//    #if DEBUG
+//        let str1 = (file as NSString).lastPathComponent
+//        let str2 = NSMutableString.init(string: str1)
+//        let range = NSRange.init(location: 0, length: str2.length)
+//        str2.replaceOccurrences(of: ".swift", with: "", options: NSString.CompareOptions.backwards, range: range)
+//        print("<\(str2)--\(function)>[\(line)]:\(messagr)")
+//    #endif
+//}
 
 func ColorRGB(red: CGFloat, green: CGFloat , blue: CGFloat ) -> UIColor {
     
