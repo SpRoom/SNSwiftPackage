@@ -185,6 +185,7 @@ class SNBaseNoDataView : SNBaseView {
     
     let imgV = UIImageView().then {
         $0.image = Image("nothing")
+        $0.contentMode = .scaleAspectFit
     }
     let descL = UILabel().then {
         $0.textColor = Color(0x8f8f8f)
@@ -204,7 +205,7 @@ extension SNBaseNoDataView {
         
         imgV.snp.makeConstraints { (make) in
             make.bottom.snEqualTo(self.snp.centerY).snOffset(-100)
-//            make.width.height.snEqualTo(300)
+            make.width.height.snEqualTo(300)
             make.centerX.snEqualToSuperview()
         }
         
