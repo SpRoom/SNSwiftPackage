@@ -116,3 +116,9 @@ public func <-> (property: ControlProperty<String>, subject: BehaviorSubject<Str
     
     return Disposables.create(bindToUIDisposeable, bindToSubject)
 }
+
+
+public func <= <T>(lhs: BehaviorSubject<T>, rhs: T) {
+    
+    lhs.onNext(rhs)
+}
