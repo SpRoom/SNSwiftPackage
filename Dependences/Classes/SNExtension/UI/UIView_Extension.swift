@@ -21,4 +21,15 @@ extension UIView {
         self.layer.mask = maskLayer
     }
     
+
+        
+       public func addSubviews(views: [UIView]) {
+            
+            for v in views {
+                self.addSubview(v)
+            }
+            
+        }
+    
+    
 }
