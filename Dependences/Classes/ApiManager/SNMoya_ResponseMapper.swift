@@ -85,7 +85,7 @@ public extension Response {
         //
         //            return SNMoyaResult.fail(code: jsonCode.int, msg: jsonMsg.string)
         //        }
-        guard jsonCode.string == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE else {
+        guard jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE else {
             return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         //        let mappedObjectsArray = mappedArray.arrayValue.flatMap { T(jsonData: $0) }

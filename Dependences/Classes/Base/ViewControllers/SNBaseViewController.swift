@@ -113,22 +113,22 @@ extension SNBaseViewController {
     /// 界面即将显示
     ///
     /// - Parameter animated: 是否动画
-    @objc func viewAppear(_ animated: Bool) {}
+    @objc open func viewAppear(_ animated: Bool) {}
     
     /// 界面完成显示
     ///
     /// - Parameter animated: 是否动画
-    @objc func viewAppeared(_ animated: Bool) {}
+    @objc open func viewAppeared(_ animated: Bool) {}
    
     /// 界面即将消失
     ///
     /// - Parameter animated: 是否动画
-    @objc func viewDisAppear(_ animated: Bool) {}
+    @objc open func viewDisAppear(_ animated: Bool) {}
     
     /// 界面完成消失
     ///
     /// - Parameter animated: 是否动画
-    @objc func viewDisAppeared(_ animated: Bool) {}
+    @objc open func viewDisAppeared(_ animated: Bool) {}
     
     
     
