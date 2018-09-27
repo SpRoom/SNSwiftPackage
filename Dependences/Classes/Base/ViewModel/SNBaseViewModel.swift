@@ -21,6 +21,7 @@ open class SNBaseViewModel: NSObject {
    public let disposeBag = DisposeBag()
    public let jumpSubject = PublishSubject<(UIViewController?, SNJumpType)>()
     public var isCanJumpLogin = true
+    public let endRefresh = PublishSubject<Bool>()
     override public init() {
         super.init()
         
