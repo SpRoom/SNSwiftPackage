@@ -42,7 +42,7 @@ public extension Response {
         //            return SNMoyaResult.fail(code: 0000, msg: "登录过期，请重新登录")
         //        }
         
-        guard jsonCode.string == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE, let mappedObject = T(jsonData: jsonObj) else {
+        guard jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE, let mappedObject = T(jsonData: jsonObj) else {
             return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         
@@ -106,7 +106,7 @@ public extension Response {
         //            //throw SNMoyaError.fail(code: nil, msg: jsonMsg.string)
         //            return SNMoyaResult.fail(code: jsonCode.int, msg: jsonMsg.string)
         //        }
-        guard jsonCode.string == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE, let mappedString = jsonObj.string else {
+        guard jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE, let mappedString = jsonObj.string else {
             return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         return SNMoyaResult.success(mappedString)

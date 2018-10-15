@@ -9,12 +9,12 @@
 import UIKit
 
 /// 字体
-func Font(_ size: CGFloat) -> UIFont {
+public func Font(_ size: CGFloat) -> UIFont {
     return UIFont.systemFont(ofSize: fit(size))
 }
 
 
 /// 加粗字体
-func BoldFont(_ size: CGFloat) -> UIFont {
+public func BoldFont(_ size: CGFloat) -> UIFont {
     return UIFont.boldSystemFont(ofSize: fit(size))
 }
