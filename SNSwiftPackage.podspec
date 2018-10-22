@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackage"
-  s.version      = "0.1.4"
+  s.version      = "0.1.5.pre.1"
   s.summary      = "SNSwiftPackage."
   s.swift_version = '4.0'
 
@@ -128,7 +128,7 @@ Pod::Spec.new do |s|
 
   s.subspec "HUD" do |ss|
     ss.source_files = "Dependences/Classes/SVProgressHUD/**/*"
-    ss.dependency "SVProgressHUD", "> 2.2.2"
+    ss.dependency "SVProgressHUD", "~> 2.2.2"
     ss.dependency "SNSwiftPackage/Core"
   end
 
