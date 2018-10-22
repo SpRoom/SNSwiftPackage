@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackage"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "SNSwiftPackage."
   s.swift_version = '4.0'
 
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "10.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -116,26 +116,26 @@ Pod::Spec.new do |s|
 
   s.subspec "RxSwiftExtension" do |ss|
     ss.source_files = "Dependences/Classes/Rx/**/*"
-    ss.dependency "RxSwift", "~> 4.0"
-    ss.dependency 'RxCocoa', '~> 4.0.0'
+    ss.dependency "RxSwift", "> 4.0"
+    ss.dependency 'RxCocoa', '> 4.0.0'
   end
 
   s.subspec "Snap" do |ss|
     ss.source_files = "Dependences/Classes/SnapKit/**/*"
-    ss.dependency "SnapKit", "~> 4.0.0"
+    ss.dependency "SnapKit", "> 4.0.0"
     ss.dependency "SNSwiftPackage/Core"
   end
 
   s.subspec "HUD" do |ss|
     ss.source_files = "Dependences/Classes/SVProgressHUD/**/*"
-    ss.dependency "SVProgressHUD", " 2.2.2"
+    ss.dependency "SVProgressHUD"
     ss.dependency "SNSwiftPackage/Core"
   end
 
   s.subspec "API" do |ss|
     ss.source_files = "Dependences/Classes/ApiManager/**/*"
-    ss.dependency "Moya/RxSwift", "~> 11"
-    ss.dependency 'SwiftyJSON', '~> 4.0'
+    ss.dependency "Moya/RxSwift", "> 11"
+    ss.dependency 'SwiftyJSON', '> 4.0'
     ss.dependency "SNSwiftPackage/RxSwiftExtension"
     ss.dependency "SNSwiftPackage/Core"
   end
