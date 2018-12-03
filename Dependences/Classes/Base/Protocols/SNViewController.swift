@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-typealias SNBaseViewController = SNBaseViewControllerImpl & _SNBaseViewController
+public typealias SNBaseViewController = SNBaseViewControllerImpl & _SNBaseViewController
 
 public protocol SNBaseViewControllerImpl {
     
