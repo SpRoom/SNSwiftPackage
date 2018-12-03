@@ -10,7 +10,7 @@ import UIKit
 
 public class SNBaseTableView: UITableView {
 
-    override init(frame: CGRect, style: UITableViewStyle) {
+    override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         SNLog("table create with style")
         
@@ -21,8 +21,6 @@ public class SNBaseTableView: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // 空数据图
-    var nodataView = SNBaseNoDataView()
 
 }
 
@@ -42,6 +40,5 @@ extension SNBaseTableView {
 
 }
 
-extension SNBaseTableView : SNBaseNoDataRender {}
 
 

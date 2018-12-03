@@ -19,13 +19,13 @@ public func getCurrentVC() -> UIViewController {
     
     var  window = UIApplication.shared.keyWindow
     
-    if window?.windowLevel != UIWindowLevelNormal {
+    if window?.windowLevel != UIWindow.Level.normal {
         
         let windows = UIApplication.shared.windows
         
         for tmpWin in windows {
             
-            if tmpWin.windowLevel == UIWindowLevelNormal {
+            if tmpWin.windowLevel == UIWindow.Level.normal {
                 window = tmpWin
                 break
             }
@@ -199,9 +199,14 @@ public func getTimeBy(timeStamp: String, format: String) -> String {
 public func callPhone(phone: String) {
     
     if #available(iOS 10.0, *) { //10.3.1  10.3
-        UIApplication.shared.open(URL(string: "telprompt://\(phone)")!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: "telprompt://\(phone)")!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         
     } else {
         UIApplication.shared.openURL(URL(string: "telprompt://\(phone)")!)// Fallback on earlier versions
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

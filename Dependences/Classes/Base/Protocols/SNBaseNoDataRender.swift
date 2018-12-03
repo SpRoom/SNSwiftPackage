@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SNBaseNoDataRender {
+public protocol SNBaseNoDataRender {
     
     /// set no data image view
     ///
@@ -41,16 +41,16 @@ protocol SNBaseNoDataRender {
 
 extension SNBaseNoDataRender {
     
-    func setNoDataViewImage(name: String) {
+   public func setNoDataViewImage(name: String) {
         nodataView.imgV.image = Image(name)
     }
     
     
-    func setNoDataViewDesc(str: String) {
+   public func setNoDataViewDesc(str: String) {
         nodataView.descL.text = str
     }
  
-    func showNoDataView(img: String, str: String, isShow: Bool) {
+   public func showNoDataView(img: String, str: String, isShow: Bool) {
         setNoDataViewImage(name: img)
         setNoDataViewDesc(str: str)
         showNoDataView(action: isShow)
@@ -60,7 +60,7 @@ extension SNBaseNoDataRender {
 extension SNBaseNoDataRender where Self : UIViewController {
 
     
-    func showNoDataView(action: Bool) {
+    public func showNoDataView(action: Bool) {
         
         if action {
             view.addSubview(nodataView)
@@ -80,7 +80,7 @@ extension SNBaseNoDataRender where Self : UIViewController {
 extension SNBaseNoDataRender where Self : UITableView {
 
     
-    func showNoDataView(action: Bool) {
+    public func showNoDataView(action: Bool) {
         
         if action {
             addSubview(nodataView)

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-open class SNBaseViewController: UIViewController {
+open class _SNBaseViewController: UIViewController {
     
     
    public let disposeBag = DisposeBag()
@@ -22,7 +22,6 @@ open class SNBaseViewController: UIViewController {
         basicStyle()
         setupView()
         bindEvent()
-        
     }
 
     open override func didReceiveMemoryWarning() {
@@ -58,53 +57,20 @@ open class SNBaseViewController: UIViewController {
     }
     
     
-    // 空数据图
-    fileprivate var noDataView = SNBaseNoDataView()
-    
-    
-    var noDataViewImageName = "" {
-        didSet {
-            noDataView.imgV.image = Image(noDataViewImageName)
-        }
-    }
-    
-    var noDataViewDesc = "" {
-        didSet {
-            noDataView.descL.text = noDataViewDesc
-        }
-    }
-    
-    var showNoDataView = false {
-        didSet {
-            if showNoDataView {
-                self.view.bringSubview(toFront: noDataView)
-                noDataView.isHidden = false
-            } else {
-                self.view.insertSubview(noDataView, at: 0)
-                noDataView.isHidden = true
-            }
-        }
-    }
+   
 }
 
 
-extension SNBaseViewController {
+extension _SNBaseViewController {
     
     func baseConfig() {
-        
-        view.addSubview(noDataView)
-        
-        noDataView.snp.makeConstraints { (make) in
-            make.edges.snEqualToSuperview()
-        }
-        
-        noDataView.isHidden = true
+        SNLog("error")
     }
     
     /// 启动视图
     @objc open func setupView() {}
     
-    /// 帮顶事件
+    /// 绑定事件
     @objc open func bindEvent() {}
     
     /// 初始化加载数据
@@ -134,15 +100,8 @@ extension SNBaseViewController {
     
 }
 
-extension SNBaseViewController {
+extension _SNBaseViewController {
     
-    
-    func noData(show: Bool,desc: String="暂时没有数据", blankImageName: String="nothing") {
-        
-        self.noDataViewImageName = blankImageName
-        self.noDataViewDesc = desc
-        self.showNoDataView = show
-    }
     
     /*
     func setNaviBarColor(scroll: UIScrollView, titleView: UIView){

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SNBaseNoDataView : SNBaseView {
+public class SNBaseNoDataView : SNBaseView {
     
     let imgV = UIImageView().then {
         $0.image = Image("nothing")
@@ -23,7 +23,7 @@ class SNBaseNoDataView : SNBaseView {
 
 extension SNBaseNoDataView {
     
-    override func setupView() {
+    override public func setupView() {
         
         addSubview(imgV)
         addSubview(descL)

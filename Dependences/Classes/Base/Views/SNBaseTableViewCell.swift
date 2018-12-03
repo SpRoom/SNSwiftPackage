@@ -11,7 +11,7 @@ import RxSwift
 
 open class SNBaseTableViewCell: UITableViewCell {
 
-    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupView()

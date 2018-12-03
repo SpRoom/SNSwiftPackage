@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackage"
-  s.version      = "0.1.5.pre.1"
+  s.version      = "0.1.5.pre.2"
   s.summary      = "SNSwiftPackage."
   s.swift_version = '4.0'
 
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
