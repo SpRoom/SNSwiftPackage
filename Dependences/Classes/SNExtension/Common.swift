@@ -49,7 +49,7 @@ fileprivate func adjustSize(attribute: CGFloat) -> CGFloat {
     let scale = UIScreen.main.scale
     let widthPx = ScreenW * scale
     
-    let rate = widthPx/UiDesignWidth
+    let rate = widthPx/designWidth
     
     var result = attribute * rate
     
