@@ -13,6 +13,7 @@ class common: NSObject {
 }
 //MARK: - 公共属性
 
+/// UI设计图 px
 public var designWidth : CGFloat = 750.0
 
 public let ScreenW = UIScreen.main.bounds.width
@@ -20,7 +21,8 @@ public let ScreenW = UIScreen.main.bounds.width
 public let ScreenH = UIScreen.main.bounds.height
 
 public func fit(_ attribute: CGFloat) -> CGFloat {
-    return adjustSizeWithUiDesign(attribute: attribute, UiDesignWidth: designWidth)
+//    return adjustSizeWithUiDesign(attribute: attribute, UiDesignWidth: designWidth)
+    return adjustSize(attribute: attribute)
 }
 
 
@@ -37,7 +39,7 @@ fileprivate func adjustSize(attribute: CGFloat) -> CGFloat {
 //        result = attribute
 //    case 375:
 //        result = attribute/1.104
-//        
+//
 //    case 768:
 //        result = attribute * 1.85507
 //    default:
