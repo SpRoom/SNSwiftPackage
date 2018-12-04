@@ -31,23 +31,31 @@ fileprivate func adjustSize(attribute: CGFloat) -> CGFloat {
     
 //    precondition(IS_IPONE, "this is not iphone,adjust method can not be used")
     
-    var result : CGFloat = 0.0
-    switch ScreenW {
-    case 414:
-        result = attribute
-    case 375:
-        result = attribute/1.104
-        
-    case 768:
-        result = attribute * 1.85507
-    default:
-        result = attribute/1.29375
-    }
+//    var result : CGFloat = 0.0
+//    switch ScreenW {
+//    case 414:
+//        result = attribute
+//    case 375:
+//        result = attribute/1.104
+//        
+//    case 768:
+//        result = attribute * 1.85507
+//    default:
+//        result = attribute/1.29375
+//    }
+    
+    let scale = UIScreen.main.scale
+    let widthPx = ScreenW * scale
+    
+    let rate = widthPx/UiDesignWidth
+    
+    var result = attribute * rate
+    
     return result
 }
 
 
-//此方法基本不用,通过APPCommon中的adjustSizeAPP调用此方法
+//此方法基本不用, 废弃
 func adjustSizeWithUiDesign(attribute: CGFloat,UiDesignWidth: CGFloat) -> CGFloat {
     let rate = UiDesignWidth/414.0
     

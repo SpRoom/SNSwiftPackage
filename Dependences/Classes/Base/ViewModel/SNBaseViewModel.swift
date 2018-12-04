@@ -23,7 +23,7 @@ open class SNBaseViewModel: NSObject {
     
    public let jumpSubject = PublishSubject<(UIViewController?, SNJumpType)>()
     
-    public var isCanJumpLogin = true
+   static public var isCanJumpLogin = true
     
     public let endRefresh = PublishSubject<Bool>()
     

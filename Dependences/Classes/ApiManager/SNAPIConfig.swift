@@ -18,6 +18,10 @@ public class SNAPIConfig {
     
     public static var tokenAuth = ""
     
+    public static var success_code : String {
+        return MOYA_RESULT_SUCCESS_CODE
+    }
+    
     public static func configKeyMoyaResultCode(_ str: String) {
         MOYA_RESULT_CODE = str
     }
