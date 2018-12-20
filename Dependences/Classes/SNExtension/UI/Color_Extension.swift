@@ -54,7 +54,14 @@ extension UIColor {
      */
 }
 
+/// RGB Color
+public func Color(red: Int, green: Int , blue: Int, alpha: CGFloat = 1.0) -> UIColor {
+    
+    return UIColor.init(red: red, green: green, blue: blue, alpha: 1.0)
+}
+
+
 /// 十六进制颜色
-public func Color(_ hex: Int) -> UIColor {
-    return UIColor(hexadecimal: hex)
+public func Color(_ hex: Int, alpha: CGFloat = 1.0) -> UIColor {
+    return UIColor(hexadecimal: hex, alpha: alpha)
 }

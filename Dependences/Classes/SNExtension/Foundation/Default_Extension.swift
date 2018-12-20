@@ -13,12 +13,12 @@ public var SNDefault_userTokenDefaultKey = "userToken"
 public var SNDefault_usernameDefaultKey = "username"
 
 // MARK: - 保存token 到 userDefault
-func saveTokenToUserDefault(token: String) {
+func saveInUserDefault(token: String) {
     UserDefaults.standard.set(token, forKey: SNDefault_userTokenDefaultKey)
 }
 
 // MARK: - 清除 userDefault 中的 token
-func cleanTokenOnUserDefault() {
+func cleanTokenInUserDefault() {
     UserDefaults.standard.set("", forKey: SNDefault_userTokenDefaultKey)
 }
 
@@ -30,11 +30,11 @@ func fetchTokenByUserdefault() -> String {
 }
 
 // MARK: - 保存username 到 userDefault
-func saveUsernameToUserDefault(username: String) {
+func saveInUserDefault(username: String) {
     UserDefaults.standard.set(username, forKey: SNDefault_usernameDefaultKey)
 }
 // MARK: - 清除 userDefault 中的 username
-func cleanUsernameOnUserDefault() {
+func cleanUsernameInUserDefault() {
     UserDefaults.standard.set("", forKey: SNDefault_usernameDefaultKey)
 }
 

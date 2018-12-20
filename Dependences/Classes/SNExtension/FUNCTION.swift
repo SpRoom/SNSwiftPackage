@@ -115,13 +115,7 @@ public func text2Doubel(_ text: String) -> Double {
 
 // MARK: - String 转 Int
 public func text2Int(_ text: String) -> Int {
-    
-    
-    //    if let i = Int(text) {
-    //        return i
-    //    } else {
-    //        return 0
-    //    }
+
     let n = NumberFormatter().number(from: text)
     if let num = n {
         let totalPrice = Int(truncating: num)

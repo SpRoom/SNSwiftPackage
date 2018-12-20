@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(*, deprecated )
 extension String {
     
     /// 获取某个位置的字符串

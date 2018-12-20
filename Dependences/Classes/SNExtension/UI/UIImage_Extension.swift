@@ -18,7 +18,7 @@ public func Image(_ name: String) -> UIImage? {
 extension UIImage {
     
     //创建纯颜色图片
-    public static func createImageBy(color : UIColor) -> UIImage{
+    public static func create(by color : UIColor) -> UIImage{
         let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()

@@ -11,6 +11,7 @@ import class UIKit.UITableView
 import class UIKit.UIViewController
 import struct Foundation.IndexPath
 
+
 public protocol ReusableView {
     static var reuseIdentifier: String {get}
 }
@@ -27,6 +28,8 @@ extension UITableViewCell: ReusableView {
 extension UIViewController : ReusableView {
 }
 
+
+// MARK: - tableview extension
 extension UITableView {
     
     /// cell 复用
@@ -50,6 +53,10 @@ extension UITableView {
         register(cell.self, forCellReuseIdentifier: cell.reuseIdentifier)
     }
     
+    
+    /// 批量注册cell
+    ///
+    /// - Parameter cells: 需要注册的cell数组
     public func registers<T: UITableViewCell>(_ cells: [T.Type]) {
         
         for cell in cells {

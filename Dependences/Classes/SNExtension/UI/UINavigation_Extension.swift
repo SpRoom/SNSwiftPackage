@@ -13,6 +13,7 @@ public enum SNNaviButtonPostion {
     case right
 }
 
+/// 添加导航栏按钮
 @discardableResult
 public func naviButton(_ naviItem: UINavigationItem,  target: Any?, action: Selector, point: SNNaviButtonPostion = .right, title: String, titleColor: UIColor = .white) -> UIButton {
     

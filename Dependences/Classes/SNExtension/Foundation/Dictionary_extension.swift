@@ -10,9 +10,38 @@ import UIKit
 
 extension Dictionary {
     
-    mutating func append(dictionary:Dictionary) {
-        for (key, value) in dictionary {
-            self[key] = value
+    /// 合并字典
+    ///
+    /// - Parameters:
+    ///   - other: 需添加的字典
+    ///   - instead: key重复是否用other中的value替换
+    /// - Returns: 得到的字典
+    public func merging(_ other: Dictionary, instead : Bool) -> Dictionary {
+        
+       let dic = self.merging(other) { (old, new) -> Value in
+            if instead {
+                return new
+            } else {
+                return old
+            }
+        }
+        return dic
+    }
+    
+    
+    /// 合并字典并覆盖
+    ///
+    /// - Parameters:
+    ///   - other: 需添加的字典
+    ///   - instead: key重复是否用other中的value替换
+    public mutating func merge(_ other: Dictionary, instead: Bool) {
+        
+        self.merge(other) { (old, new) -> Value in
+            if instead {
+                return new
+            } else {
+                return old
+            }
         }
     }
 }

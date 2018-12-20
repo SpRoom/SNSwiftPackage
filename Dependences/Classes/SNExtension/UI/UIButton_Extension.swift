@@ -11,7 +11,7 @@ import UIKit
 
 extension UIButton {
     
-    func setImage(imageName: String, for state: UIControl.State) {
+    public func set(imageName: String, for state: UIControl.State) {
         
         let img = UIImage(named: imageName)
         self.setImage(img, for: state)

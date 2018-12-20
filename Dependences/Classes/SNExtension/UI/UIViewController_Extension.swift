@@ -13,6 +13,7 @@ import UIKit
 
 extension UIViewController {
     
+    /// push 跳转
    public func push(_ vc: UIViewController, animated: Bool) {
         
         self.navigationController?.pushViewController(vc, animated: animated)
