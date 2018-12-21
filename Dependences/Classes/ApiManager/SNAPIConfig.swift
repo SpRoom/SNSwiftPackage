@@ -15,6 +15,7 @@ public class SNAPIConfig {
     private(set) static var MOYA_RESULT_MSG = "msg"
     private(set) static var MOYA_RESULT_DATA = "data"
     private(set) static var MOYA_RESULT_SUCCESS_CODE = "1000"
+    private(set) static var MOYA_RESULT_TOKEN_KEY = "token"
     
     public static var tokenAuth = ""
     
