@@ -19,17 +19,17 @@ public protocol JSONMappableTargetType: TargetType {
 }
 
 
-extension JSONMappableTargetType {
+public extension JSONMappableTargetType {
     
-    func headerJSONToken() -> [String: String] {
+    func headerJSONToken(token: String? = nil) -> [String: String] {
 
         var header = [
             "Content-Type": "application/json; charset=utf-8"
         ]
 
-        let token = "Singleton.shared.token"
-        header["X-AUTH-TOKEN"] = "\(token)"
-
+        if let token = token {
+        header[SNAPIConfig.header_key] = "\(token)"
+        }
         return header
     }
 

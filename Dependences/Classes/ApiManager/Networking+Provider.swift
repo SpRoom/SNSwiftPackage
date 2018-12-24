@@ -11,7 +11,7 @@ import RxSwift
 import Moya
 import SwiftyJSON
 
-extension MoyaProvider {
+public extension MoyaProvider {
 
     func requestArray<T: SNSwiftyJSONAble>(target: Target, type: [T.Type]) -> Observable<SNMoyaResult<[T]>> {
        return rx.request(target).asObservable().map(to: type.self)
