@@ -15,7 +15,7 @@ class common: NSObject {
 
 
 
-class SNSwiftPackageManager  {
+public class SNSwiftPackageManager  {
     
     public static func config(annotion type: UIAnnotationType, disign width: CGFloat) {
         

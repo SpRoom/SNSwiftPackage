@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackage"
-  s.version      = "0.1.5"
+  s.version      = "0.1.6"
   s.summary      = "SNSwiftPackage."
   s.swift_version = '4.2'
 
@@ -118,6 +118,7 @@ Pod::Spec.new do |s|
     ss.source_files = "Dependences/Classes/Rx/**/*"
     ss.dependency "RxSwift", "> 4.0"
     ss.dependency 'RxCocoa', '> 4.0.0'
+    ss.dependency 'RxDataSources', '> 3.0.0'
   end
 
   s.subspec "Snap" do |ss|
