@@ -10,7 +10,10 @@ import UIKit
 import RxSwift
 
 open class _SNBaseViewController: UIViewController {
-    
+
+
+    let basicScrollView = UIScrollView()
+    public let basicContentView = UIView()
     
    public let disposeBag = DisposeBag()
 
@@ -31,7 +34,7 @@ open class _SNBaseViewController: UIViewController {
     
     func basicStyle() {
         view.backgroundColor = .white
-        self.navigationController?.navigationBar.isTranslucent = false
+//        self.navigationController?.navigationBar.isTranslucent = false
     }
     
    open override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +67,25 @@ open class _SNBaseViewController: UIViewController {
 extension _SNBaseViewController {
     
     func baseConfig() {
-        SNLog("error")
+
+        // built-in scrollview, and layout
+        basicScrollView.contentSize = CGSize(width: ScreenW, height: 0)
+        view.addSubview(basicScrollView)
+        basicScrollView.addSubview(basicContentView)
+
+        basicScrollView.snp.makeConstraints { (make) in
+            make.top.snTopSuperview(vc: self)
+            make.bottom.snBottomSuperview(vc: self)
+            make.left.snEqualToSuperview()
+            make.right.snEqualToSuperview()
+        }
+
+        basicContentView.snp.makeConstraints { (make) in
+            make.top.snEqualToSuperview()
+            make.bottom.snEqualToSuperview()
+            make.left.snEqualTo(view.snp.left)
+            make.right.snEqualTo(view.snp.right)
+        }
     }
     
     /// 启动视图
@@ -135,9 +156,7 @@ extension _SNBaseViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    func f5backgroundcolor() {
-        view.backgroundColor = UIColor(hexadecimal: 0xf5f5f5)
-    }
+
 }
 
 
