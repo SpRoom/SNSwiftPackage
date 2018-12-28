@@ -11,17 +11,17 @@ import RxCocoa
 import UIKit
 
 
-func <= <T>(lhs: BehaviorSubject<T>, rhs: T) {
+public func <= <T>(lhs: BehaviorSubject<T>, rhs: T) {
 
     lhs.onNext(rhs)
 }
 
-func <= <T>(lhs: BehaviorRelay<T>, rhs: T) {
+public func <= <T>(lhs: BehaviorRelay<T>, rhs: T) {
 
     lhs.accept(rhs)
 }
 
-func <= <T>(lhs: PublishSubject<T>, rhs: T) {
+public func <= <T>(lhs: PublishSubject<T>, rhs: T) {
 
     lhs.onNext(rhs)
 }

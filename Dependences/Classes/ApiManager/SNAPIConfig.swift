@@ -40,11 +40,11 @@ public class SNAPIConfig {
         MOYA_RESULT_DATA = str
     }
     
-    public static func configResultKey(code: String = "code", msg: String = "msg", data: String = "data", status: String = "1000", token: String = "X-AUTH-TOKEN") {
-        MOYA_RESULT_CODE = code
-        MOYA_RESULT_MSG = msg
-        MOYA_RESULT_DATA = data
-        MOYA_RESULT_SUCCESS_CODE = status
-        MOYA_REQUEST_HEADER_TOKEN_KEY = token
+    public static func configResultKey(codeKey: String = "code", msgKey: String = "msg", dataKey: String = "data", successCode: String = "1000", tokenKey: String = "X-AUTH-TOKEN") {
+        MOYA_RESULT_CODE = codeKey
+        MOYA_RESULT_MSG = msgKey
+        MOYA_RESULT_DATA = dataKey
+        MOYA_RESULT_SUCCESS_CODE = successCode
+        MOYA_REQUEST_HEADER_TOKEN_KEY = tokenKey
     }
 }
