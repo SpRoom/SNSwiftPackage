@@ -10,9 +10,10 @@ import Foundation
 
 
 public func SNLog<T>(_ message: T, file: String = #file, function: String = #function, line: Int = #line) {
-    
+    #if DEBUG
     var fileName = file as NSString
     
     fileName = fileName.lastPathComponent as NSString
     print("[\(fileName)--\(function)--\(line) : \(message)]")
+    #endif
 }

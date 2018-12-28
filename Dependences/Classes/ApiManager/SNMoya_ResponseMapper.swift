@@ -15,7 +15,7 @@ public extension Response {
     
     /// Maps data received from the signal into an object which implements the SNSwiftyJSONAble protocol.
     /// If the conversion fails, the signal errors.
-    public func map<T: SNSwiftyJSONAble>(to type:T.Type) throws -> SNMoyaResult<T> {
+    public func map<T: SNSwiftyJSONAble>(to type:T.Type) throws -> T {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
@@ -24,21 +24,26 @@ public extension Response {
         let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
         
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
-            
-            print("token核对失败，请重新登录")
-            return SNMoyaResult.login
+
+            throw SNAPIError.notLoggedIn
         }
 
         
-        guard jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE, let mappedObject = T(jsonData: jsonObj) else {
-            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
+        guard jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE else {
+//            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
+            throw SNAPIError.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
-        return SNMoyaResult.success(mappedObject)
+
+        guard let mappedObject = T(jsonData: jsonObj) else {
+            throw SNAPIError.mappingError
+        }
+
+        return mappedObject
     }
     
     /// Maps data received from the signal into an array of objects which implement the SNSwiftyJSONAble protocol
     /// If the conversion fails, the signal errors.
-    public func map<T: SNSwiftyJSONAble>(to type:[T.Type]) throws -> SNMoyaResult<[T]> {
+    public func map<T: SNSwiftyJSONAble>(to type:[T.Type]) throws -> [T] {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
@@ -49,23 +54,22 @@ public extension Response {
         
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
             
-            print("token核对失败，请重新登录")
-            return SNMoyaResult.login
+            throw SNAPIError.notLoggedIn
         }
         
         let mappedArray = jsonObj
         
       
         guard jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE else {
-            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
+            throw SNAPIError.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         //        let mappedObjectsArray = mappedArray.arrayValue.flatMap { T(jsonData: $0) }
         let mappedObjectsArray = mappedArray.arrayValue.compactMap { T(jsonData: $0) }
         
-        return SNMoyaResult.success(mappedObjectsArray)
+        return mappedObjectsArray
     }
     
-    public func mapToString() throws -> SNMoyaResult<String> {
+    public func mapToString() throws -> String {
         
         let jsonData = try JSON(data: self.data)
         
@@ -75,85 +79,85 @@ public extension Response {
         
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
             
-            return SNMoyaResult.login
+            throw SNAPIError.notLoggedIn
         }
         
         if jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE {
             
             if let mapStr = jsonObj.string {
-                return SNMoyaResult.success(mapStr)
+                return mapStr
             } else {
-                return SNMoyaResult.fail(code: "sn_parse_string_fail", msg: "parse string failed")
+                throw SNAPIError.mappingError
             }
             
             
         } else {
             
-            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
+            throw SNAPIError.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
         
     }
     
-    public func mapToNetModel() throws -> SNMoyaResult<SNNetModel> {
+    public func mapToNetModel() throws -> SNNetModel {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
         
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
-            return SNMoyaResult.login
+            throw SNAPIError.notLoggedIn
         }
         
         guard let model = SNNetModel(jsonData: jsonData) else {
-//            throw MoyaError.jsonMapping(self)
-            return SNMoyaResult.fail(code: "sn_parse_model_fail", msg: "parse default net model failed")
+
+            throw SNAPIError.mappingError
         }
         
-        return SNMoyaResult.success(model)
+        return model
     }
     
-    public func mapToModel<T: SNSwiftyJSONAble>() throws -> SNMoyaResult<T> {
+    public func mapToModel<T: SNSwiftyJSONAble>() throws -> T {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
         
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
-            return SNMoyaResult.login
+            throw SNAPIError.notLoggedIn
         }
         
         guard let model = T(jsonData: jsonData) else {
-            return SNMoyaResult.fail(code: "sn_parse_custom_model_fail", msg: "pase custom model failed")
+            throw SNAPIError.mappingError
         }
         
-        return SNMoyaResult.success(model)
+        return model
     }
     
-    public func mapToBool() throws -> SNMoyaResult<Bool> {
+    public func mapToBool() throws -> Bool {
         let jsonData = try JSON(data: self.data)
         
         let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
 //        let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
-        let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
-        
+//        let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
+
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
             
-            return SNMoyaResult.login
+            throw SNAPIError.notLoggedIn
         }
         
         if jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE {
-            return SNMoyaResult.bool(msg: jsonMsg.stringValue)
+            return true
         }
         
-        return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
+        return false
     }
     
-    public func mapToJSON() throws -> SNMoyaResult<JSON> {
+    public func mapToJSON() throws -> JSON {
         
         let jsonData = try JSON(data: self.data)
         
         if jsonData == JSON.null {
-            return SNMoyaResult.fail(code: "sn_parse_data_is_null", msg: "parse data is empty")
+            throw SNAPIError.mappingError
         }
         
-        return SNMoyaResult.success(jsonData)
+        return jsonData
     }
 }

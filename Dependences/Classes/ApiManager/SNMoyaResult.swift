@@ -10,9 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-enum SNMoyaError : Error {
-    case fail(code: Int?, msg: String?)
-}
+
 
 public enum SNMoyaResult<T> {
     case success(T)
@@ -21,15 +19,15 @@ public enum SNMoyaResult<T> {
     case login
 }
 
-extension UILabel {
-    public var rx_text: ControlProperty<String> {
-        // 观察text
-        let source: Observable<String> = self.rx.observe(String.self, "text").map { $0 ?? "" }
-        let setter: (UILabel, String) -> Void = { $0.text = $1 }
-        let bindingObserver = Binder(self, binding: setter)
-        return ControlProperty<String>(values: source, valueSink: bindingObserver)
-    }
-}
+//extension UILabel {
+//    public var rx_text: ControlProperty<String> {
+//        // 观察text
+//        let source: Observable<String> = self.rx.observe(String.self, "text").map { $0 ?? "" }
+//        let setter: (UILabel, String) -> Void = { $0.text = $1 }
+//        let bindingObserver = Binder(self, binding: setter)
+//        return ControlProperty<String>(values: source, valueSink: bindingObserver)
+//    }
+//}
 
 extension SNMoyaResult {
     
