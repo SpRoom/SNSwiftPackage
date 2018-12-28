@@ -16,46 +16,46 @@ public extension ObservableType where E == Response {
     
     /// Maps data received from the signal into an object which implements the ALSwiftyJSONAble protocol.
     /// If the conversion fails, the signal errors.
-    public func map<T: SNSwiftyJSONAble>(to type: T.Type) -> Observable<SNMoyaResult<T>> {
-        return flatMap { response -> Observable<SNMoyaResult<T>> in
+    public func map<T: SNSwiftyJSONAble>(to type: T.Type) -> Observable<T> {
+        return flatMap { response -> Observable<T> in
             return Observable.just(try response.map(to: type))
         }
     }
     
     /// Maps data received from the signal into an array of objects which implement the ALSwiftyJSONAble protocol.
     /// If the conversion fails, the signal errors.
-    public func map<T: SNSwiftyJSONAble>(to type: [T.Type]) -> Observable<SNMoyaResult<[T]>> {
-        return flatMap { response -> Observable<SNMoyaResult<[T]>> in
+    public func map<T: SNSwiftyJSONAble>(to type: [T.Type]) -> Observable<[T]> {
+        return flatMap { response -> Observable<[T]> in
             return Observable.just(try response.map(to: type))
         }
     }
     
-    public func mapToString() -> Observable<SNMoyaResult<String>> {
-        return flatMap({ response -> Observable<SNMoyaResult<String>> in
+    public func mapToString() -> Observable<String> {
+        return flatMap({ response -> Observable<String> in
             return Observable.just(try response.mapToString())
         })
     }
     
-    public func mapToNetModel() -> Observable<SNMoyaResult<SNNetModel>> {
-        return flatMap({ response -> Observable<SNMoyaResult<SNNetModel>> in
+    public func mapToNetModel() -> Observable<SNNetModel> {
+        return flatMap({ response -> Observable<SNNetModel> in
             return Observable.just(try response.mapToNetModel())
         })
     }
     
-    public func mapToModel<T: SNSwiftyJSONAble>() -> Observable<SNMoyaResult<T>> {
-        return flatMap({ response -> Observable<SNMoyaResult<T>> in
+    public func mapToModel<T: SNSwiftyJSONAble>() -> Observable<T> {
+        return flatMap({ response -> Observable<T> in
             return Observable.just(try response.mapToModel())
         })
     }
     
-    public func mapToBool() -> Observable<SNMoyaResult<Bool>> {
-        return flatMap({ response -> Observable<SNMoyaResult<Bool>> in
+    public func mapToBool() -> Observable<Bool> {
+        return flatMap({ response -> Observable<Bool> in
             return Observable.just(try response.mapToBool())
         })
     }
     
-    public func mapToJSON() -> Observable<SNMoyaResult<JSON>> {
-        return flatMap({ (response) -> Observable<SNMoyaResult<JSON>> in
+    public func mapToJSON() -> Observable<JSON> {
+        return flatMap({ (response) -> Observable<JSON> in
             return Observable.just(try response.mapToJSON())
         })
     }
