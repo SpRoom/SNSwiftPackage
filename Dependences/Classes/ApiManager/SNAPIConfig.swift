@@ -24,23 +24,35 @@ public class SNAPIConfig {
         return MOYA_REQUEST_HEADER_TOKEN_KEY
     }
 
+    public static var code_key: String {
+        return MOYA_RESULT_CODE
+    }
+
+    public static var data_key: String {
+        return MOYA_RESULT_DATA
+    }
+
+    public static var msg_key: String {
+        return MOYA_RESULT_MSG
+    }
+
     public static var success_code: String {
         return MOYA_RESULT_SUCCESS_CODE
     }
     
-    public static func configKeyMoyaResultCode(_ str: String) {
+    public static func configKey(codeKey str: String) {
         MOYA_RESULT_CODE = str
     }
     
-    public static func configKeyMoyaResultMsg(_ str: String) {
+    public static func configKey(msgKey str: String) {
         MOYA_RESULT_MSG = str
     }
     
-    public static func configKeyMoyaResultData(_ str: String) {
+    public static func configKey(dataKey str: String) {
         MOYA_RESULT_DATA = str
     }
     
-    public static func configResultKey(codeKey: String = "code", msgKey: String = "msg", dataKey: String = "data", successCode: String = "1000", tokenKey: String = "X-AUTH-TOKEN") {
+    public static func configResult(codeKey: String = "code", msgKey: String = "msg", dataKey: String = "data", successCode: String = "1000", tokenKey: String = "X-AUTH-TOKEN") {
         MOYA_RESULT_CODE = codeKey
         MOYA_RESULT_MSG = msgKey
         MOYA_RESULT_DATA = dataKey

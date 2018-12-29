@@ -27,7 +27,7 @@ public extension JSONMappableTargetType {
             "Content-Type": "application/json; charset=utf-8"
         ]
 
-        if let token = token {
+        if let token = token, !token.isEmpty {
         header[SNAPIConfig.header_key] = "\(token)"
         }
         return header
