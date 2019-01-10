@@ -11,7 +11,7 @@ import RxSwift
 
 
 /// 每次点击按钮需调用start方法
-public class SNTimerButton: UIButton {
+open class SNTimerButton: UIButton {
 
     // 倒计时时间
     let time : Int

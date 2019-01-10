@@ -13,16 +13,16 @@ public protocol SectionItemType {
     
 }
 
-struct TableSectionModel<T:SectionItemType> {
-    var title: String
-    var items: [T]
+public struct TableSectionModel<T:SectionItemType> {
+    public var title: String
+    public var items: [T]
 }
 
 extension TableSectionModel : SectionModelType {
     
-    typealias Item = T
+    public typealias Item = T
     
-    init(original: TableSectionModel, items: [Item]) {
+    public init(original: TableSectionModel, items: [Item]) {
         self = original
         self.items = items
     }

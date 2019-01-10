@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class SNBaseTableView: UITableView {
+open class SNBaseTableView: UITableView {
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        SNLog("table create with style")
         
         defautlConfig()
+        setupViews()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -35,6 +35,10 @@ extension SNBaseTableView {
         showsHorizontalScrollIndicator = false
         backgroundColor = SNBaseView.defaultBgColor
 
+    }
+
+    @objc open func setupViews() {
+        
     }
     
 
