@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackage"
-  s.version      = "0.1.7.pre3"
+  s.version      = "0.1.7.pre4"
   s.summary      = "SNSwiftPackage."
   s.swift_version = '4.2'
 

@@ -13,24 +13,10 @@ public typealias SNBaseViewController = SNBaseViewControllerImpl & _SNBaseViewCo
 
 public protocol SNBaseViewControllerImpl {
     
-    associatedtype vm: SNBaseViewModel
-    
-    var vmodel: vm {get set}
-    
-    func bbind()
+    associatedtype ViewModelType: SNBaseViewModel
+
+    var vmodel: ViewModelType { get set }
 }
 
-extension SNBaseViewControllerImpl where Self : _SNBaseViewController {
-    
-    public func bbind() {
-        
-        vmodel.jumpSubject.subscribe(onNext: { (vc,type) in
-            VCJump(VC: self, to: vc, type: type)
-        }).disposed(by: disposeBag)
-        
-    }
-    
-
-}
 
 
