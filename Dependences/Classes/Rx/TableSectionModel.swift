@@ -16,6 +16,11 @@ public protocol SectionItemType {
 public struct TableSectionModel<T:SectionItemType> {
     public var title: String
     public var items: [T]
+    
+    public init(title: String = "", items: [T]) {
+        self.title = title
+        self.items = items
+    }
 }
 
 extension TableSectionModel : SectionModelType {
