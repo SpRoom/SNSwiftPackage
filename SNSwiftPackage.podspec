@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackage"
-  s.version      = "0.1.7.pre4"
+  s.version      = "0.1.7"
   s.summary      = "SNSwiftPackage."
   s.swift_version = '4.2'
 
@@ -26,8 +26,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-          这只是一个建立pod仓库的简单demo，并没有实际的意思。教学使用。
-          当然这里只是尝试搭建一个自己的pod
+          Swift 第三方整合扩展，以及基类库。正在不断的更新中
                    DESC
 
   s.homepage     = "https://github.com/SpectatorNanWithZZC/SNSwiftPackage"
