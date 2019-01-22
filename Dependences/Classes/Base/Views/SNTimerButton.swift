@@ -16,7 +16,7 @@ open class SNTimerButton: UIButton {
     // 倒计时时间
     let time : Int
     // 默认显示内容
-    var content : String {
+    public var content : String {
         didSet {
             setTitle(content, for: .normal)
         }
@@ -33,6 +33,8 @@ open class SNTimerButton: UIButton {
         content = title
         
         super.init(frame: .zero)
+
+        setTitle(content, for: .normal)
     }
     
     required public init?(coder aDecoder: NSCoder) {
