@@ -65,6 +65,14 @@ open class _SNBaseViewController: UIViewController {
 
 
 extension _SNBaseViewController {
+
+    public func showsHorizontalScrollIndicator(isShow: Bool) {
+        basicScrollView.showsHorizontalScrollIndicator = isShow
+    }
+
+    public func showsVerticalScrollIndicator(isShow: Bool) {
+        basicScrollView.showsVerticalScrollIndicator = isShow
+    }
     
     func baseConfig() {
 
