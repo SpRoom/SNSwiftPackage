@@ -16,6 +16,12 @@ extension ConstraintMakerEditable {
         self.offset(fit(amount))
         return self
     }
+
+    @discardableResult
+    public func snInset(_ amount: CGFloat) -> SnapKit.ConstraintMakerEditable {
+        self.inset(fit(amount))
+        return self
+    }
     
 }
 
