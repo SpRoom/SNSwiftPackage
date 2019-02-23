@@ -12,7 +12,7 @@ import RxSwift
 open class _SNBaseViewController: UIViewController {
 
 
-    let basicScrollView = UIScrollView()
+    public let basicScrollView = UIScrollView()
     public let basicContentView = UIView()
     
    public let disposeBag = DisposeBag()
