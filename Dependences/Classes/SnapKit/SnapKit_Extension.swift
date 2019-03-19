@@ -49,7 +49,7 @@ extension ConstraintMakerRelatable {
         if #available(iOS 11, *) {
             return self.equalTo(vc.view.safeAreaLayoutGuide.snp.top)
         } else {
-            return self.equalTo(vc.topLayoutGuide.snp.bottom)
+            return self.equalTo(vc.topLayoutGuide.snp.top)
         }
     }
     
