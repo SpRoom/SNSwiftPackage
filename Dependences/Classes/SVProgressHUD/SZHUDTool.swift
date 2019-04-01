@@ -29,9 +29,12 @@ extension SZHUDTool {
 }
 
 public func SZHUDDismiss() {
-    if SVProgressHUD.isVisible() {
-    SVProgressHUD.dismiss()
+    DispatchQueue.main.async {
+        if SVProgressHUD.isVisible() {
+            SVProgressHUD.dismiss()
+        }
     }
+
 }
 
 fileprivate func SZHUDLoading(_ message: String) {
@@ -54,7 +57,7 @@ public enum SZHUDType {
 }
 
 public func SZHUD(_ message: String, type: SZHUDType, time: TimeInterval = 1, callBack: (() -> ())?) {
-    
+    DispatchQueue.main.async {
     switch type {
     case .error:
         SZHUDError(message)
@@ -75,7 +78,7 @@ public func SZHUD(_ message: String, type: SZHUDType, time: TimeInterval = 1, ca
         })
     }
 //    }
-    
+    }
 }
 
 func SZHUD(_ image: UIImage, message: String) {
