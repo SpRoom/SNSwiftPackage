@@ -27,7 +27,9 @@ open class SNBaseTableViewCell: UITableViewCell {
     
     public var disposeBag = DisposeBag()
     
+    /// 复用 滑出屏幕调用
     override open func prepareForReuse() {
+        super.prepareForReuse()
         disposeBag = DisposeBag()
     }
 
