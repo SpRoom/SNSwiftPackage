@@ -62,7 +62,7 @@ public extension JSONMappableTargetType {
         }
     }
 
-    public func covertToDic() -> [String: Any] {
+    func covertToDic() -> [String: Any] {
 
         var para: [String: Any] = [:]
 

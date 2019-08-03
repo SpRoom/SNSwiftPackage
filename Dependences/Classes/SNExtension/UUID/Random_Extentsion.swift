@@ -41,7 +41,8 @@ class Random_Extentsion: NSObject {
 //        let endBound = dateStr.index(dateStr.startIndex, offsetBy: end)
         
 //        let resultStr = dateStr.substring(with: Range(uncheckedBounds: (starBound, endBound)))
-        let resultStr = dateStr.substring(star: start, end: end)
+//        let resultStr = dateStr.substring(star: start, end: end)
+        let resultStr = dateStr[safe: start..<end] ?? ""
         
         return resultStr
     }

@@ -15,7 +15,7 @@ public extension Response {
     
     /// Maps data received from the signal into an object which implements the SNSwiftyJSONAble protocol.
     /// If the conversion fails, the signal errors.
-    public func map<T: SNSwiftyJSONAble>(to type:T.Type) throws -> T {
+    func map<T: SNSwiftyJSONAble>(to type:T.Type) throws -> T {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
@@ -43,7 +43,7 @@ public extension Response {
     
     /// Maps data received from the signal into an array of objects which implement the SNSwiftyJSONAble protocol
     /// If the conversion fails, the signal errors.
-    public func map<T: SNSwiftyJSONAble>(to type:[T.Type]) throws -> [T] {
+    func map<T: SNSwiftyJSONAble>(to type:[T.Type]) throws -> [T] {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
@@ -69,7 +69,7 @@ public extension Response {
         return mappedObjectsArray
     }
     
-    public func mapToString() throws -> String {
+    func mapToString() throws -> String {
         
         let jsonData = try JSON(data: self.data)
         
@@ -98,7 +98,7 @@ public extension Response {
         
     }
     
-    public func mapToNetModel() throws -> SNNetModel {
+    func mapToNetModel() throws -> SNNetModel {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
@@ -115,7 +115,7 @@ public extension Response {
         return model
     }
     
-    public func mapToModel<T: SNSwiftyJSONAble>() throws -> T {
+    func mapToModel<T: SNSwiftyJSONAble>() throws -> T {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
@@ -131,7 +131,7 @@ public extension Response {
         return model
     }
     
-    public func mapToBool() throws -> Bool {
+    func mapToBool() throws -> Bool {
         let jsonData = try JSON(data: self.data)
         
         let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
@@ -150,7 +150,7 @@ public extension Response {
         return false
     }
     
-    public func mapToJSON() throws -> JSON {
+    func mapToJSON() throws -> JSON {
         
         let jsonData = try JSON(data: self.data)
         

@@ -8,7 +8,9 @@
 
 import Foundation
 import SwiftyJSON
+#if canImport(SNSwiftPackage)
 import SNSwiftPackage
+#endif
 
 extension String: SNSwiftyJSONAble {
 
