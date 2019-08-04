@@ -98,3 +98,44 @@ extension UIView {
         layer.cornerRadius = radius
     }
 }
+
+extension UIView {
+    
+    /// 试图 缩放动画
+    /// - Parameter scaleMax: 放大比例  原始1
+    /// - Parameter scaleMin: 缩小比例  原始1
+    /// - Parameter count: 缩放次数
+    public func zoom(scaleMax: CGFloat, scaleMin: CGFloat, count: Int) {
+        
+        let maxTrans = CGAffineTransform(scaleX: scaleMax, y: scaleMax)
+        let minTrans = CGAffineTransform(scaleX: scaleMin, y: scaleMin)
+        
+        self.transform = minTrans
+        
+        zoomAnimation(minTrans: minTrans, maxTrans: maxTrans, maxCount: count)
+    }
+    
+    private func zoomAnimation(minTrans: CGAffineTransform, maxTrans: CGAffineTransform, maxCount: Int, currentCount: Int = 1) {
+        
+        let animtionDuration: TimeInterval = 0.6
+        let completionDuration: TimeInterval = 0.3
+        
+        UIView.animate(withDuration: animtionDuration, animations: {
+            self.transform = maxTrans
+        }, completion: { result in
+            UIView.animate(withDuration: animtionDuration, animations: {
+                self.transform = minTrans
+            }, completion: { result in
+                let newCurrent = currentCount + 1
+                if newCurrent <= maxCount {
+                    self.zoomAnimation(minTrans: minTrans, maxTrans: maxTrans, maxCount: maxCount, currentCount: newCurrent)
+                } else {
+                    UIView.animate(withDuration: completionDuration, animations: {
+                        self.transform = CGAffineTransform(scaleX: 1, y: 1)
+                    })
+                }
+            })
+        })
+    }
+    
+}

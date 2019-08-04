@@ -64,3 +64,38 @@ extension ConstraintMakerRelatable {
     }
     
 }
+
+public extension ConstraintMaker {
+    
+    func center() {
+        self.center.snEqualToSuperview()
+    }
+    
+    func height(_ height: CGFloat) {
+        self.height.snEqualTo(height)
+    }
+    
+    func width(_ width: CGFloat) {
+        self.width.snEqualTo(width)
+    }
+    
+    func size(_ width: ConstraintRelatableTarget, _ height: ConstraintRelatableTarget) {
+        self.width.snEqualTo(width)
+        self.height.snEqualTo(height)
+    }
+    
+    func position(left: CGFloat? = nil, top: CGFloat? = nil, right: CGFloat? = nil, bottom: CGFloat? = nil) {
+        if let target = top {
+            self.top.snEqualToSuperview().snOffset(target)
+        }
+        if let target = left {
+            self.left.snEqualToSuperview().snOffset(target)
+        }
+        if let target = right {
+            self.right.snEqualToSuperview().snOffset(target)
+        }
+        if let target = bottom {
+            self.bottom.snEqualToSuperview().snOffset(target)
+        }
+    }
+}

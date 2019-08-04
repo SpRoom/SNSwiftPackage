@@ -47,3 +47,10 @@ struct RotationTool {
     }
 
 }
+
+extension UIView {
+    
+    public func reverseRotation() {
+        RotationTool.rotation(for: self, fromValue: 0, toValue: CGFloat.pi/2, autoreverses: true, repeatCount: MAXFLOAT, duration: 2, key: nil)
+    }
+}

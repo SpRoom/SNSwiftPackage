@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SNSwiftPackage
+//import SNSwiftPackage
 
 extension UIWindow {
 
@@ -24,7 +24,7 @@ extension UIWindow {
         }
     }
 
-    var splashFirst: Bool {
+    public var splashFirst: Bool {
 
         if let splashView = splash {
 

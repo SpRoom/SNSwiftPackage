@@ -8,11 +8,11 @@
 
 import Foundation
 import SwiftyJSON
-#if canImport(SNSwiftPackage)
-import SNSwiftPackage
-#endif
+//#if canImport(SNSwiftPackage)
+//import SNSwiftPackage
+//#endif
 
-extension String: SNSwiftyJSONAble {
+public extension String: SNSwiftyJSONAble {
 
     public init?(jsonData: JSON) {
         self = jsonData.stringValue

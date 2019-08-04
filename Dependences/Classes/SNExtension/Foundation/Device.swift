@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SNSwiftPackage
+//import SNSwiftPackage
 
 
 public enum DeviceType: Int {
