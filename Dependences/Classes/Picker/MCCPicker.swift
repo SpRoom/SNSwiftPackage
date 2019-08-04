@@ -313,7 +313,7 @@ extension MCCPicker {
         
         var sections = table1Rep.value
         if sections.isEmpty {
-            let section = TableSectionModel(title: "", items:
+            _ = TableSectionModel(title: "", items:
                 items
             )
 //            table1Rep <= [section]

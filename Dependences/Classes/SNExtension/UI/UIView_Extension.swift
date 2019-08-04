@@ -87,3 +87,14 @@ extension UIView {
     }
 
 }
+
+extension UIView {
+    
+    public func shadow(color: UIColor, offset: CGSize, opacity: Float, radius: CGFloat) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOffset = offset
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = radius
+        layer.cornerRadius = radius
+    }
+}
