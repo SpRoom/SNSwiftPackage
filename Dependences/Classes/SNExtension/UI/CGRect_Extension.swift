@@ -20,68 +20,68 @@ extension CGRect {
 extension UIView {
     
     // x
-    var x : CGFloat {
-        
-        get {
-            
-            return frame.origin.x
-        }
-        
-        set(newVal) {
-            
-            var tmpFrame : CGRect = frame
-            tmpFrame.origin.x     = newVal
-            frame                 = tmpFrame
-        }
-    }
+//    var x : CGFloat {
+//
+//        get {
+//
+//            return frame.origin.x
+//        }
+//
+//        set(newVal) {
+//
+//            var tmpFrame : CGRect = frame
+//            tmpFrame.origin.x     = newVal
+//            frame                 = tmpFrame
+//        }
+//    }
     
     // y
-    var y : CGFloat {
-        
-        get {
-            
-            return frame.origin.y
-        }
-        
-        set(newVal) {
-            
-            var tmpFrame : CGRect = frame
-            tmpFrame.origin.y     = newVal
-            frame                 = tmpFrame
-        }
-    }
+//    var y : CGFloat {
+//
+//        get {
+//
+//            return frame.origin.y
+//        }
+//
+//        set(newVal) {
+//
+//            var tmpFrame : CGRect = frame
+//            tmpFrame.origin.y     = newVal
+//            frame                 = tmpFrame
+//        }
+//    }
     
     // height
-    var height : CGFloat {
-        
-        get {
-            
-            return frame.size.height
-        }
-        
-        set(newVal) {
-            
-            var tmpFrame : CGRect = frame
-            tmpFrame.size.height  = newVal
-            frame                 = tmpFrame
-        }
-    }
+//    var height : CGFloat {
+//
+//        get {
+//
+//            return frame.size.height
+//        }
+//
+//        set(newVal) {
+//
+//            var tmpFrame : CGRect = frame
+//            tmpFrame.size.height  = newVal
+//            frame                 = tmpFrame
+//        }
+//    }
     
     // width
-    var width : CGFloat {
-        
-        get {
-            
-            return frame.size.width
-        }
-        
-        set(newVal) {
-            
-            var tmpFrame : CGRect = frame
-            tmpFrame.size.width   = newVal
-            frame                 = tmpFrame
-        }
-    }
+//    var width : CGFloat {
+//        
+//        get {
+//            
+//            return frame.size.width
+//        }
+//        
+//        set(newVal) {
+//            
+//            var tmpFrame : CGRect = frame
+//            tmpFrame.size.width   = newVal
+//            frame                 = tmpFrame
+//        }
+//    }
     
     // left
     var left : CGFloat {

@@ -6,7 +6,7 @@
 //  Copyright © 2019 zsh. All rights reserved.
 //
 
-import Foundation
+import UIKit
 //import SNSwiftPackage
 
 extension UIWindow {

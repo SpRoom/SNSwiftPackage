@@ -35,7 +35,7 @@ class SNNumberTextField: UITextField {
 
         delegate = self
         keyboardType = .decimalPad
-        tintColor = staticTheme.mainColor
+        
     }
 
     required init?(coder aDecoder: NSCoder) {

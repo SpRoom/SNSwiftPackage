@@ -12,7 +12,7 @@ import SwiftyJSON
 //import SNSwiftPackage
 //#endif
 
-public extension String: SNSwiftyJSONAble {
+extension String: SNSwiftyJSONAble {
 
     public init?(jsonData: JSON) {
         self = jsonData.stringValue

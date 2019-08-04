@@ -90,6 +90,6 @@ extension UIImage {
 public protocol ImageTarget {
     
 }
-public extension URL: ImageTarget {}
-public extension String: ImageTarget {}
-public extension UIImage: ImageTarget {}
+extension URL: ImageTarget {}
+extension String: ImageTarget {}
+extension UIImage: ImageTarget {}

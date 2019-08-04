@@ -6,7 +6,7 @@
 //  Copyright © 2019 Spec. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension Array where Element: UIView {
     

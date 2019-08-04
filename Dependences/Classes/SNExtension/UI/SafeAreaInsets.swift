@@ -6,14 +6,14 @@
 //  Copyright © 2019 zsh. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIViewController {
 
     private var safeInsets: UIEdgeInsets {
 
         if #available(iOS 11.0, *) {
-            return Application.shared.window.safeAreaInsets
+            return UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
         } else {
             return .zero
         }
@@ -52,7 +52,7 @@ extension UIView {
     private var safeInsets: UIEdgeInsets {
 
         if #available(iOS 11.0, *) {
-            return Application.shared.window.safeAreaInsets
+            return UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero
         } else {
             return .zero
         }
