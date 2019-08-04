@@ -11,7 +11,11 @@ import UIKit
 struct MainApp {
     
     public static var statusBarHeight: CGFloat {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 20
+        } else {
         return UIApplication.shared.statusBarFrame.height
+        }
     }
     
     public static var appBundleID: String {
