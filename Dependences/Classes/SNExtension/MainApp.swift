@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MainApp {
+public struct MainApp {
     
     public static var statusBarHeight: CGFloat {
         if #available(iOS 13, *) {
