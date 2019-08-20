@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SNSwiftPackage"
-  s.version      = "0.1.8"
+  s.version      = "0.1.9"
   s.summary      = "SNSwiftPackage."
   s.swift_version = '4.2'
 
@@ -103,7 +103,7 @@ Pod::Spec.new do |s|
   s.subspec "Core" do |ss|
     ss.source_files  = "Dependences/Classes/SNExtension/**/*"
     ss.framework  = "Foundation", "UIKit"
-
+    ss.dependency 'Kingfisher'
   end
 
   s.subspec "Base" do |ss|
@@ -138,7 +138,29 @@ Pod::Spec.new do |s|
     ss.dependency 'SwiftyJSON', '> 4.0'
     ss.dependency "SNSwiftPackage/RxSwiftExtension"
     ss.dependency "SNSwiftPackage/Core"
+    ss.dependency 'ReachabilitySwift', '4.3.1'
   end
+
+  s.subspec "StoreKit" do |ss|
+    ss.source_files = "Dependences/Classes/SwiftyStoreKit/**/*"
+    ss.dependency 'SwiftyStoreKit'
+  end
+
+  s.subspec "FLAnimation" do |ss|
+    ss.source_files = "Dependences/Classes/FLAnimatedImage/**/*"
+    ss.dependency 'FLAnimatedImage'
+  end
+
+  s.subspec "SwiftDateKit" do |ss|
+    ss.source_files = "Dependences/Classes/SwiftDate/**/*"
+    ss.dependency 'SwiftDate'
+  end
+
+  s.subspec "HeroExtension" do |ss|
+    ss.source_files = "Dependences/Classes/Hero/**/*"
+    ss.dependency 'Hero'
+  end
+
 
   # s.public_header_files = "Classes/**/*.h"
 
