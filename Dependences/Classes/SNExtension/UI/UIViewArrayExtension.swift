@@ -10,6 +10,7 @@ import UIKit
 
 public extension Array where Element: UIView {
     
+    /// 是否隐藏
     var isHidden: Bool {
         set {
             for view in self {
@@ -23,6 +24,7 @@ public extension Array where Element: UIView {
         }
     }
     
+    /// 从父视图隐藏
     func removeFromSuperView() {
         
         for view in self {
@@ -30,6 +32,7 @@ public extension Array where Element: UIView {
         }
     }
     
+    /// 旋转动画，反向互转
     func reverseRotaion() {
         
         for watiView in self {

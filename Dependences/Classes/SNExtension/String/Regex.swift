@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Regex {
     
     static let chinese = #"[\u4e00-\u9fa5]"#

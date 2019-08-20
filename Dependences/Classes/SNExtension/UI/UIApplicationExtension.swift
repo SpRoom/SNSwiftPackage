@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIApplication {
+    
+    /// 获取当前控制器
+    /// - Parameter base: 目前的rootVC
     public class func getCurrentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return getCurrentViewController(base: nav.visibleViewController)

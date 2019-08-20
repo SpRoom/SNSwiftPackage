@@ -10,6 +10,7 @@ import UIKit
 
 extension Array where Element: UILabel {
     
+    /// 设置文本颜色
     public var textColor: UIColor {
         set {
             for label in self {

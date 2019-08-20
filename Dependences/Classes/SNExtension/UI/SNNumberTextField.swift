@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import RxCocoa
-import RxSwift
+//import RxCocoa
+//import RxSwift
 
 /*
 extension Reactive where Base: SNNumberTextField {
@@ -28,7 +28,7 @@ extension Reactive where Base: SNNumberTextField {
 */
 
 /// 数字输入框
-class SNNumberTextField: UITextField {
+public class SNNumberTextField: UITextField {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +49,7 @@ class SNNumberTextField: UITextField {
 
 extension SNNumberTextField: UITextFieldDelegate {
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = text else { return false }
 //        let dots = text.filter { $0 == "." }
 

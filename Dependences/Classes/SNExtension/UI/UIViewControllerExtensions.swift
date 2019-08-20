@@ -37,15 +37,24 @@ extension UIViewController {
         }
     }
 
-    func backTwo() {
+    public func backTwo() {
 
         guard let navigation = self.navigationController else {
             return
         }
 
         let oldViewControllers = navigation.viewControllers
+        
+        if oldViewControllers.count < 1 {
+            return
+        }
+        
+        var viewControllerIndex = oldViewControllers.count - 3
+        if oldViewControllers.count <= 3 && oldViewControllers.count > 0 {
+            viewControllerIndex = 0
+        }
 
-        navigation.popToViewController(oldViewControllers[oldViewControllers.count - 3], animated: true)
+        navigation.popToViewController(oldViewControllers[viewControllerIndex], animated: true)
 
     }
 }

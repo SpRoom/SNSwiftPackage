@@ -45,7 +45,7 @@ public extension Double {
 
 extension Float {
     
-    var moneyStr: String {
+    public var moneyStr: String {
         return fractionDigits(value: self.cgFloat)
         //        return String(format: "%.2f", self)
     }
@@ -54,12 +54,12 @@ extension Float {
 
 extension String {
     
-    var moneyValue: String {
+    public var moneyValue: String {
         let double = Double(self) ?? 0.0
         return String(format: "%0.2f", double)
     }
     
-    var bankCardNoValue: String {
+    public var bankCardNoValue: String {
         let pre = self[safe: 0..<4] ?? ""
         
         let suffix = self[safe: self.count-4..<self.count] ?? ""
@@ -69,7 +69,7 @@ extension String {
         return pre+middle+suffix
     }
     
-    var securePhoneValue: String {
+    public var securePhoneValue: String {
         
         let pre = self[safe: 0..<3] ?? ""
         

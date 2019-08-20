@@ -120,7 +120,8 @@ extension UIDevice {
         default:                                         return identifier
         }
     }
-
+    
+    /// 获取当前设备
     public var type: DeviceType {
         switch self.modelName {
         case "iPod Touch 1":                    return .iPod1
