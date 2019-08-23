@@ -15,7 +15,7 @@ public protocol SNBaseViewControllerImpl {
     
     associatedtype ViewModelType: SNBaseViewModel
 
-    var vmodel: ViewModelType { get set }
+    var viewModel: ViewModelType { get set }
 }
 
 

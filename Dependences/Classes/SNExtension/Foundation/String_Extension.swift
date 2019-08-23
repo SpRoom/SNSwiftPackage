@@ -279,7 +279,7 @@ public extension String {
         let scanner = Scanner(string: self)
         scanner.locale = NSLocale.current
 //        return scanner.scanDecimal(nil) && scanner.isAtEnd
-        return scanner.scanDecimal() != nil && scanner.isAtEnd
+        return scanner.scanDecimal(nil) != nil && scanner.isAtEnd
     }
     #endif
     

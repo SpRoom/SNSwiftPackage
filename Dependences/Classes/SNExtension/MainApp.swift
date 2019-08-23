@@ -12,7 +12,8 @@ public struct MainApp {
     
     public static var statusBarHeight: CGFloat {
         if #available(iOS 13, *) {
-            return UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 20
+//            return UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame.height ?? 20
+            return 0
         } else {
         return UIApplication.shared.statusBarFrame.height
         }

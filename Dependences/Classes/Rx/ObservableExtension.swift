@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-extension Observable where Element: Equatable {
+public extension Observable where Element: Equatable {
     func ignore(value: Element) -> Observable<Element> {
         return filter { (selfE) -> Bool in
             return value != selfE
@@ -19,7 +19,7 @@ extension Observable where Element: Equatable {
 }
 
 
-extension ObservableType {
+public extension ObservableType {
     
     func catchErrorJustComplete() -> Observable<E> {
         return catchError { _ in
