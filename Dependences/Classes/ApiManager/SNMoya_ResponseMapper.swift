@@ -47,7 +47,7 @@ public extension Response {
         
         let jsonData = try JSON(data: self.data)
         SNLog(jsonData)
-        
+//        sleep(2)
         let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
         let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
         let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]

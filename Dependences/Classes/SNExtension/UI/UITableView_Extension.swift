@@ -65,3 +65,16 @@ extension UITableView {
     }
 }
 
+extension UITableView {
+    
+    public func dequeueReusable<T: UITableViewCell>(class cell: T.Type) -> T {
+        guard let aCell = dequeueReusableCell(withIdentifier: cell.reuseIdentifier) as? T else {
+            fatalError("Couldn't find UITableViewCell for \(cell.reuseIdentifier), make sure the cell is registered with table view")
+        }
+        return aCell
+    }
+    
+    public func registerCell<T: UITableViewCell>(nib cell: T.Type) {
+        register(UINib(nibName: cell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: cell.reuseIdentifier)
+    }
+}

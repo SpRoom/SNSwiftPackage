@@ -13,8 +13,8 @@ import SwiftyJSON
 
 public extension MoyaProvider {
 
-    func requestArray<T: SNSwiftyJSONAble>(target: Target, type: [T.Type]) -> Observable<[T]> {
-       return rx.request(target).asObservable().map(to: type.self)
+    func requestArray<T: SNSwiftyJSONAble>(target: Target, type: T.Type) -> Observable<[T]> {
+        return rx.request(target).asObservable().map(to: [type.self])
     }
 
     func request<T: SNSwiftyJSONAble>(target: Target, type: T.Type) -> Observable<T> {
