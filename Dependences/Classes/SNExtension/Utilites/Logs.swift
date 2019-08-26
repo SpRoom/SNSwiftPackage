@@ -14,6 +14,6 @@ public func SNLog<T>(_ message: T, file: String = #file, function: String = #fun
     var fileName = file as NSString
     
     fileName = fileName.lastPathComponent as NSString
-    print("[\(fileName)--\(function)--\(line) : \(message)]")
+    print("[\(Date().timeIntervalSince1970) \(fileName)--\(function)--\(line) : \(message)]")
     #endif
 }
