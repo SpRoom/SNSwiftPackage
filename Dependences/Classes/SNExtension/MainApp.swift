@@ -26,4 +26,14 @@ public struct MainApp {
     public static var appVersion: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }
+    
+    @available(iOS 13, *)
+    public static var keyWindow: UIWindow? {
+        return UIApplication.shared.connectedScenes
+        .filter({$0.activationState == .foregroundActive})
+        .map({$0 as? UIWindowScene})
+        .compactMap({$0})
+        .first?.windows
+            .filter({$0.isKeyWindow}).first ?? nil
+    }
 }

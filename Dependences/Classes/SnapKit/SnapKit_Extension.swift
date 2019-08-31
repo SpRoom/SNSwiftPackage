@@ -67,6 +67,14 @@ extension ConstraintMakerRelatable {
 
 public extension ConstraintMaker {
     
+    func positionCenterY() {
+        self.centerY.snEqualToSuperview()
+    }
+    
+    func positionCenterX() {
+        self.centerX.snEqualToSuperview()
+    }
+    
     func center() {
         self.center.snEqualToSuperview()
     }

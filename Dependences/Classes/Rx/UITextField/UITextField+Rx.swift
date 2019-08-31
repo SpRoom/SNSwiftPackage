@@ -27,14 +27,14 @@ extension Reactive where Base: UITextField {
     }
 }
 
-protocol CompareData: Equatable {
+public protocol CompareData: Equatable {
 
 }
 
 
 extension Double: CompareData {}
 
-extension UITextField {
+ extension UITextField {
 
     func bind<T: CompareData>(relay: BehaviorRelay<String>, min: T, max: T) -> Disposable {
         _ = self.rx.textInput <-> relay
@@ -44,7 +44,7 @@ extension UITextField {
         })
     }
 
-    func bind(relay: BehaviorRelay<String>, limit: Int? = nil) -> Disposable {
+    public func bind(relay: BehaviorRelay<String>, limit: Int? = nil) -> Disposable {
 
         _ = self.rx.textInput <-> relay
 

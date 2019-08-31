@@ -52,6 +52,7 @@ func nonMarkedText(_ textInput: UITextInput) -> String? {
     return (textInput.text(in: startRange) ?? "") + (textInput.text(in: endRange) ?? "")
 }
 
+@discardableResult
 public func <-> <Base>(textInput: TextInput<Base>, relay: BehaviorRelay<String>) -> Disposable {
     let bindToUIDisposable = relay.bind(to: textInput.text)
 

@@ -73,7 +73,7 @@ extension UIImageView {
 
 extension UIImage {
     
-    static func fetch(from any: ImageTarget?) -> UIImage? {
+    public static func fetch(from any: ImageTarget?) -> UIImage? {
         
         if let image = any as? UIImage {
             return image

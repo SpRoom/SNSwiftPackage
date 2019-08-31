@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-extension UITextField {
+public extension UITextField {
 
     func limit(money max: Double) -> Disposable {
 
