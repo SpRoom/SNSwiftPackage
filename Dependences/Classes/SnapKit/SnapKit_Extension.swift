@@ -54,12 +54,48 @@ extension ConstraintMakerRelatable {
     }
     
     @discardableResult
+    public func snTopLessThanSuperview(vc: UIViewController, _ file: String = #file, _ line: UInt = #line) -> SnapKit.ConstraintMakerEditable {
+        if #available(iOS 11, *) {
+            return self.lessThanOrEqualTo(vc.view.safeAreaLayoutGuide.snp.top)
+        } else {
+            return self.lessThanOrEqualTo(vc.topLayoutGuide.snp.bottom)
+        }
+    }
+    
+    @discardableResult
+    public func snTopGreaterThanSuperview(vc: UIViewController, _ file: String = #file, _ line: UInt = #line) -> SnapKit.ConstraintMakerEditable {
+        if #available(iOS 11, *) {
+            return self.greaterThanOrEqualTo(vc.view.safeAreaLayoutGuide.snp.top)
+        } else {
+            return self.greaterThanOrEqualTo(vc.topLayoutGuide.snp.bottom)
+        }
+    }
+    
+    @discardableResult
     public func snBottomSuperview(vc: UIViewController,_ file: String = #file, _ line: UInt = #line) -> SnapKit.ConstraintMakerEditable {
         
         if #available(iOS 11, *) {
             return self.equalTo(vc.view.safeAreaLayoutGuide.snp.bottom)
         } else {
             return self.equalTo(vc.bottomLayoutGuide.snp.top)
+        }
+    }
+    
+    @discardableResult
+    public func snBottomLessThanSuperview(vc: UIViewController,_ file: String = #file, _ line: UInt = #line) -> SnapKit.ConstraintMakerEditable {
+        if #available(iOS 11, *) {
+            return self.lessThanOrEqualTo(vc.view.safeAreaLayoutGuide.snp.bottom)
+        } else {
+            return self.lessThanOrEqualTo(vc.bottomLayoutGuide.snp.top)
+        }
+    }
+    
+    @discardableResult
+    public func snBottomGreaterThanSuperview(vc: UIViewController, _ file: String = #file, _ line: UInt = #line) -> SnapKit.ConstraintMakerEditable {
+        if #available(iOS 11, *) {
+            return self.greaterThanOrEqualTo(vc.view.safeAreaLayoutGuide.snp.bottom)
+        } else {
+            return self.greaterThanOrEqualTo(vc.bottomLayoutGuide.snp.top)
         }
     }
     

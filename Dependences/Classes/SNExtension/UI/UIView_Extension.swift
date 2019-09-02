@@ -32,13 +32,13 @@ extension UIView {
     
 
         /// add subviews  批量添加子视图
-       public func addSubviews(views: [UIView]) {
-            
-            for v in views {
-                self.addSubview(v)
-            }
-            
-        }
+//       public func addSubviews(views: [UIView]) {
+//            
+//            for v in views {
+//                self.addSubview(v)
+//            }
+//            
+//        }
     
     
 }
