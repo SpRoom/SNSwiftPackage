@@ -161,6 +161,20 @@ Pod::Spec.new do |s|
     ss.dependency 'Hero'
   end
 
+  s.subspec "FileSize" do |ss|
+    ss.source_files = "Dependences/Classes/FileSize/**/*"
+  end
+
+
+  # s.subspec "Wechat" do |ss|
+  #   ss.source_files = "Dependences/Classes/Wechat/**/*"
+  #   ss.dependency 'SNSwiftPackage/FileSize'
+  # end
+
+  # s.subspec "Ali" do |ss|
+  #   ss.source_files  = "Dependences/Classes/Ali/**/*"
+  # end
+
 
   # s.public_header_files = "Classes/**/*.h"
 

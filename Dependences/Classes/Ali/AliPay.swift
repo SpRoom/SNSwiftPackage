@@ -10,6 +10,7 @@ import Foundation
 import SNSwiftPackage
 import SwiftyJSON
 
+/*
 extension AliPayManager {
     
     public static func turn(orderStr: String, handler: @escaping (Bool) -> Void) {
@@ -72,3 +73,4 @@ extension AliPayManager {
         })
     }
 }
+*/

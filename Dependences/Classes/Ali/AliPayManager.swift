@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import WechatSwiftPod
 public class AliPayManager: NSObject {
     
     public static let shared = AliPayManager()

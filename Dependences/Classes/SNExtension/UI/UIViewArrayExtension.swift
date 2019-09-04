@@ -40,4 +40,13 @@ public extension Array where Element: UIView {
         }
     }
     
+    func setBackground(color: UIColor) {
+        
+        forEach { $0.backgroundColor = color }
+    }
+    
+    func setCorner(radius: CGFloat) {
+        forEach { $0.cornerRadius = radius }
+    }
+    
 }
