@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 
-/// MARK: - 获取当前控制器
+/// MARK: - 获取当前根控制器
 ///
-/// - Returns: 当前VC
+/// - Returns: 当前根VC
 public func getCurrentVC() -> UIViewController {
     
     var result:UIViewController?
