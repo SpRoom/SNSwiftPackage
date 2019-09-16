@@ -11,7 +11,7 @@ import Hero
 
 extension UIViewController {
     
-    func hero(modal vc: UIViewController, animationType: HeroDefaultAnimationType) {
+    public func hero(modal vc: UIViewController, animationType: HeroDefaultAnimationType) {
         
         vc.hero.modal(aniamtionType: animationType)
         
