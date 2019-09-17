@@ -15,7 +15,7 @@ public protocol SNSwiftyJSONAble {
 }
 
 public protocol JSONMappableTargetType: TargetType {
-    var responseType: SNSwiftyJSONAble.Type { get }
+//    var responseType: SNSwiftyJSONAble.Type { get }
 }
 
 

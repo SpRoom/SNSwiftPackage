@@ -26,6 +26,18 @@ public func <= <T>(lhs: PublishSubject<T>, rhs: T) {
     lhs.onNext(rhs)
 }
 
+public func += <T>(lhs: BehaviorRelay<Array<T>>, rhs: T) {
+    var oldValue = lhs.value
+    oldValue.append(rhs)
+    lhs <= oldValue
+}
+
+public func += <T>(lhs: BehaviorRelay<Array<T>>, rhs: [T]) {
+    var oldValue = lhs.value
+    oldValue += rhs
+    lhs <= oldValue
+}
+
 
 // Two way binding operator between control property and relay, that's all it takes.
 

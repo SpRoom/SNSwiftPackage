@@ -13,12 +13,9 @@ import SwiftyJSON
 
 public extension Response {
     
-    /// Maps data received from the signal into an object which implements the SNSwiftyJSONAble protocol.
-    /// If the conversion fails, the signal errors.
     func map<T: SNSwiftyJSONAble>(to type:T.Type) throws -> T {
         
         let jsonData = try JSON(data: self.data)
-        SNLog(jsonData)
         let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
         let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
         let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
@@ -30,7 +27,6 @@ public extension Response {
 
         
         guard jsonCode.stringValue == SNAPIConfig.MOYA_RESULT_SUCCESS_CODE else {
-//            return SNMoyaResult.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
             throw SNAPIError.fail(code: jsonCode.stringValue, msg: jsonMsg.stringValue)
         }
 
@@ -41,13 +37,10 @@ public extension Response {
         return mappedObject
     }
     
-    /// Maps data received from the signal into an array of objects which implement the SNSwiftyJSONAble protocol
-    /// If the conversion fails, the signal errors.
+
     func map<T: SNSwiftyJSONAble>(to type:[T.Type]) throws -> [T] {
         
         let jsonData = try JSON(data: self.data)
-        SNLog(jsonData)
-//        sleep(2)
         let jsonCode = jsonData[SNAPIConfig.MOYA_RESULT_CODE]
         let jsonObj = jsonData[SNAPIConfig.MOYA_RESULT_DATA]
         let jsonMsg = jsonData[SNAPIConfig.MOYA_RESULT_MSG]
@@ -101,7 +94,6 @@ public extension Response {
     func mapToNetModel() throws -> SNNetModel {
         
         let jsonData = try JSON(data: self.data)
-        SNLog(jsonData)
         
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
             throw SNAPIError.notLoggedIn
@@ -118,7 +110,6 @@ public extension Response {
     func mapToModel<T: SNSwiftyJSONAble>() throws -> T {
         
         let jsonData = try JSON(data: self.data)
-        SNLog(jsonData)
         
         if let token = jsonData[SNAPIConfig.MOYA_RESULT_TOKEN_KEY].string, token != SNAPIConfig.tokenAuth {
             throw SNAPIError.notLoggedIn

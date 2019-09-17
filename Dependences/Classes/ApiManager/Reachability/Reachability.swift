@@ -10,12 +10,12 @@ import Foundation
 import Reachability
 import RxSwift
 
-func connectedToInternet() -> Observable<Bool> {
+public func connectedToInternet() -> Observable<Bool> {
 
     return ReachabilityManager.shared.reach
 }
 
-var currentNetIsOnline: Bool {
+public var currentNetIsOnline: Bool {
     return ReachabilityManager.shared.isOnline
 }
 

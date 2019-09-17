@@ -11,6 +11,7 @@ import RxSwift
 import Moya
 import SwiftyJSON
 
+@available(*, deprecated, message: "deprecated for use provider")
 public extension MoyaProvider {
 
     func requestArray<T: SNSwiftyJSONAble>(target: Target, type: T.Type) -> Observable<[T]> {
