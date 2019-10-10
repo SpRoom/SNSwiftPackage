@@ -49,4 +49,12 @@ public extension Array where Element: UIView {
         forEach { $0.cornerRadius = radius }
     }
     
+    
+    func setBorder(width: CGFloat) {
+        forEach { $0.borderWidth = width }
+    }
+    
+    func setBorder(color: UIColor?) {
+        forEach { $0.borderColor = color }
+    }
 }

@@ -165,7 +165,7 @@ Pod::Spec.new do |s|
     ss.source_files = "Dependences/Classes/FileSize/**/*"
   end
 
-
+  # ――― 微信 支付宝封装  目前官方依赖不支持modulemap暂时无法使用 ――――――――――――――― #
   # s.subspec "Wechat" do |ss|
   #   ss.source_files = "Dependences/Classes/Wechat/**/*"
   #   ss.dependency 'SNSwiftPackage/FileSize'
