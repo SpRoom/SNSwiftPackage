@@ -11,17 +11,23 @@ import RxSwift
 import RxCocoa
 
 // rx extensions
-extension Reactive where Base: UIView {
+public extension Reactive where Base: UIView {
     
-    var backgroundColor: Binder<UIColor?> {
-        return Binder(self.base) { view, attr in
-            view.backgroundColor = attr
-        }
-    }
+//    var backgroundColor: Binder<UIColor?> {
+//        return Binder(self.base) { view, attr in
+//            view.backgroundColor = attr
+//        }
+//    }
     
     var borderColor: Binder<UIColor?> {
         return Binder(self.base) { view, attr in
             view.borderColor = attr
+        }
+    }
+    
+    var borderWidth: Binder<CGFloat> {
+        return Binder(self.base) { view, attr in
+            view.borderWidth = attr
         }
     }
 }
