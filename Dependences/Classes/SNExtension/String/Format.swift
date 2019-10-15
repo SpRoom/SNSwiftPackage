@@ -51,6 +51,12 @@ extension Float {
     }
 }
 
+extension CGFloat {
+    public var moneyStr: String {
+        return float.moneyStr
+    }
+}
+
 
 extension String {
     
