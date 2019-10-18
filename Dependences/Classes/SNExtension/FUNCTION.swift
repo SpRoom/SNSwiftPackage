@@ -164,27 +164,7 @@ public func validCharacter(text: String) -> Bool {
     return result
 }
 
-/// 获取当前时间
-///
-/// - Parameter format: 时间格式
-/// - Returns: 当前时间
-public func getCurrentTime(format: String) -> String {
-    let dateformatter = DateFormatter()
-    dateformatter.dateFormat = format
-    let currentDate = Date()
-    let date = dateformatter.string(from: currentDate)
-    return date
-}
 
-public func getTimeBy(timeStamp: String, format: String) -> String {
-    
-    let dateformatter = DateFormatter()
-    dateformatter.dateFormat = format
-    let tims = TimeInterval.init(timeStamp)
-    let currentDate = Date(timeIntervalSince1970:tims!)
-    let date = dateformatter.string(from: currentDate)
-    return date
-}
 
 
 /// 拨打电话
