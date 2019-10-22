@@ -23,6 +23,10 @@ public struct MainApp {
         return Bundle.main.bundleIdentifier ?? ""
     }
     
+    public static var appDisplayName: String {
+        return Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
+    }
+    
     public static var appVersion: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }
