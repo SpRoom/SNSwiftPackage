@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.name         = "SNSwiftPackage"
   s.version      = "0.1.9"
   s.summary      = "SNSwiftPackage."
-  s.swift_version = '4.2'
+  s.swift_version = '5.1'
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -66,7 +66,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "10.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -111,6 +111,8 @@ Pod::Spec.new do |s|
   ss.dependency "SNSwiftPackage/Core"
   ss.dependency "SNSwiftPackage/RxSwiftExtension"
   ss.dependency "SNSwiftPackage/Snap"
+  ss.dependency "EFNavigationBar"
+  ss.dependency "MGJRouter_Swift"
   end
 
   s.subspec "RxSwiftExtension" do |ss|

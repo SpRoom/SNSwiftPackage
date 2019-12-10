@@ -19,11 +19,11 @@ public extension Reactive where Base: UIView {
 //        }
 //    }
     
-    var borderColor: Binder<UIColor?> {
-        return Binder(self.base) { view, attr in
-            view.borderColor = attr
-        }
-    }
+//    var borderColor: Binder<UIColor?> {
+//        return Binder(self.base) { view, attr in
+//            view.borderColor = attr
+//        }
+//    }
     
     var borderWidth: Binder<CGFloat> {
         return Binder(self.base) { view, attr in

@@ -12,17 +12,17 @@ import RxCocoa
 
 extension Reactive where Base: UITextField {
 
-    var borderColor: Binder<UIColor?> {
-        return Binder(self.base) { view, attr in
-            view.borderColor = attr
-        }
-    }
-
     var placeholderColor: Binder<UIColor?> {
         return Binder(self.base) { view, attr in
             if let color = attr {
                 view.setPlaceHolderTextColor(color)
             }
+        }
+    }
+    
+    public var placeholder: Binder<String?> {
+        return Binder(base) { view, attr in
+            view.placeholder = attr
         }
     }
 }

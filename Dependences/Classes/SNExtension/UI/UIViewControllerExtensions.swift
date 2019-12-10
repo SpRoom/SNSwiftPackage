@@ -61,4 +61,13 @@ extension UIViewController {
 
 extension UIViewController {
     
+    /// is current visible view controller
+    public func isCurrentVisibleController() -> Bool {
+        return (isViewLoaded && view.window != nil)
+    }
+    
+    /// Before using this method, you must judge whether isViewLoaded is true. Otherwise, it will crash.
+    public func isCurrentVisibleOnIsViewLoaded() -> Bool {
+        return view.window != nil
+    }
 }
