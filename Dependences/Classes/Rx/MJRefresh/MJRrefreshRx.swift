@@ -2,7 +2,7 @@
 
 //
 //  MJRrefresh.swift
-//  SNSwiftpackageSyntax
+//  SNSwiftpackage
 //
 //  Created by Spec on 2019/8/5.
 //  Copyright © 2019 Spec. All rights reserved.
