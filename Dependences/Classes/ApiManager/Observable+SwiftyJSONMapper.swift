@@ -11,6 +11,15 @@ import RxSwift
 import Moya
 import SwiftyJSON
 
+public extension ObservableType where Element == Response {
+    
+    func map<D: Decodable>(to type: D.Type) -> Observable<D> {
+        return flatMap { (response) -> Observable<D> in
+            return Observable.just(try response.map(type))
+        }
+    }
+}
+
 /// Extension for processing Responses into Mappable objects through ObjectMapper
 public extension ObservableType where E == Response {
     

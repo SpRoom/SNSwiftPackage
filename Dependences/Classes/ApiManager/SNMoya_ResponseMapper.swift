@@ -10,6 +10,11 @@ import UIKit
 import Moya
 import SwiftyJSON
 
+public extension Response {
+//    func map<D: Decodable>(to type:T.Type) throws -> T {
+//        
+//    }
+}
 
 public extension Response {
     
