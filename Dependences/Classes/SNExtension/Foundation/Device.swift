@@ -183,7 +183,7 @@ extension UIDevice {
     }
 }
 
-var isIphoneX: Bool {
+public var isIphoneX: Bool {
     if #available(iOS 11, *) {
         if let w = UIApplication.shared.delegate?.window,
             let window = w, window.safeAreaInsets.left > 0 || window.safeAreaInsets.bottom > 0 {
