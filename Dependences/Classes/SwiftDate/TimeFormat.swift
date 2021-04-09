@@ -46,7 +46,11 @@ public extension Int {
     func countDownString(_ format: String = "HH:mm:ss") -> String {
         
         let date = DateInRegion(seconds: TimeInterval(self))
-        return date.toFormat(format)
+        
+//        return date.toFormat(format)
+        return String(format: "%02d:%02d:%02d", date.hour,
+                      date.minute,
+                      date.second)
     }
     
     func secondRegion() -> DateInRegion {

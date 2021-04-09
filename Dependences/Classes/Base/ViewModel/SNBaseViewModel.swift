@@ -75,11 +75,19 @@ public func VCJump(VC: UIViewController,to: UIViewController?, type: SNJumpType,
         VC.navigationController?.pushViewController(to!, animated: true)
     case .present:
         VC.present(to!, animated: true, completion: completion)
-    case .pop:
-        VC.navigationController?.popViewController(animated: true)
-    case .dismiss:
-        VC.dismiss(animated: true, completion: completion)
+    case .pop, .dismiss:
+//        VC.navigationController?.popViewController(animated: true)
+        if let _ = VC.presentingViewController {
+            VC.dismiss(animated: true, completion: nil)
+        } else if let navi = VC.navigationController {
+           navi.popViewController()
+       }
     case .popToRoot:
-        VC.navigationController?.popToRootViewController(animated: true)
+//        VC.navigationController?.popToRootViewController(animated: true)
+        if let _ = VC.presentingViewController {
+            VC.dismiss(animated: true, completion: nil)
+        } else if let navi = VC.navigationController {
+           navi.popToRootViewController(animated: true)
+       }
     }
 }
