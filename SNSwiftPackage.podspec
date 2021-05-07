@@ -117,14 +117,14 @@ Pod::Spec.new do |s|
 
   s.subspec "RxSwiftExtension" do |ss|
     ss.source_files = "Dependences/Classes/Rx/**/*"
-    ss.dependency "RxSwift", "> 4.0"
-    ss.dependency 'RxCocoa', '> 4.0.0'
-    ss.dependency 'RxDataSources', '> 3.0.0'
+    ss.dependency "RxSwift", "> 5"
+    ss.dependency 'RxCocoa', '> 5'
+    ss.dependency 'RxDataSources'
   end
 
   s.subspec "Snap" do |ss|
     ss.source_files = "Dependences/Classes/SnapKit/**/*"
-    ss.dependency "SnapKit", "> 4.0.0"
+    ss.dependency "SnapKit", "> 5.0.0"
     ss.dependency "SNSwiftPackage/Core"
   end
 
@@ -136,11 +136,11 @@ Pod::Spec.new do |s|
 
   s.subspec "API" do |ss|
     ss.source_files = "Dependences/Classes/ApiManager/**/*"
-    ss.dependency "Moya/RxSwift", "> 11"
-    ss.dependency 'SwiftyJSON', '> 4.0'
+    ss.dependency "Moya/RxSwift", "> 14"
+    ss.dependency 'SwiftyJSON', '> 5.0'
     ss.dependency "SNSwiftPackage/RxSwiftExtension"
     ss.dependency "SNSwiftPackage/Core"
-    ss.dependency 'ReachabilitySwift', '4.3.1'
+    ss.dependency 'ReachabilitySwift', '> 5'
   end
 
   s.subspec "StoreKit" do |ss|
