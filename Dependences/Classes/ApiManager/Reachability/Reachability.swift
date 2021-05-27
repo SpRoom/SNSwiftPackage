@@ -23,7 +23,7 @@ private class ReachabilityManager {
 
     static let shared = ReachabilityManager()
 
-    private let reachability = Reachability()
+    private let reachability = try? Reachability()
 
     var isOnline: Bool {
         return _isOnline
