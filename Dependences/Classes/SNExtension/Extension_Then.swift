@@ -61,6 +61,14 @@ extension Then where Self: AnyObject {
     
 }
 
+extension Array where Element: UIView {
+    public func `do`(_ block: (Element) throws -> Void) rethrows {
+        for e in self {
+            try block(e)
+        }
+    }
+}
+
 extension NSObject: Then {}
 
 extension CGPoint: Then {}

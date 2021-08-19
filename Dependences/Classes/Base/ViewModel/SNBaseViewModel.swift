@@ -69,7 +69,7 @@ extension SNBaseViewModel {
 }
 
 public func VCJump(VC: UIViewController,to: UIViewController?, type: SNJumpType, completion: (() -> Swift.Void)? = nil) {
-    
+
     switch type {
     case .push:
         VC.navigationController?.pushViewController(to!, animated: true)
