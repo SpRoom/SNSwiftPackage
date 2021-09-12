@@ -40,7 +40,7 @@ extension UIButton {
 
     public var snTap: Observable<Void> {
 
-        return self.rx.tap.throttle(0.8, latest: false, scheduler: MainScheduler.instance)
+        return self.rx.tap.throttle(.milliseconds(800), latest: false, scheduler: MainScheduler.instance)
 
     }
 }

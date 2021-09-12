@@ -21,7 +21,7 @@ public extension ObservableType where Element == Response {
 }
 
 /// Extension for processing Responses into Mappable objects through ObjectMapper
-public extension ObservableType where E == Response {
+public extension ObservableType where Element == Response {
     
     /// Maps data received from the signal into an object which implements the ALSwiftyJSONAble protocol.
     /// If the conversion fails, the signal errors.
